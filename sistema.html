@@ -96,68 +96,114 @@ code { font-family: var(--font-data); font-size: 0.9em; }
 <li>Tu voto solo cuenta para repartir los escaños de tu provincia. Los votos que sobran en una provincia no pasan a otra ni se suman a nivel nacional.</li>
 </ul>
 <h2 id="como-se-reparten-los-escanos-de-una-provincia">Cómo se reparten los escaños de una provincia</h2>
-<p>Se usa un método llamado <strong>ley D’Hondt</strong>. La idea es sencilla:</p>
+<p>Se usa un método llamado <strong>ley D’Hondt</strong>. La forma más fácil de entenderlo es pensar en un <strong>precio por escaño</strong>:</p>
 <ol>
 <li><strong>Primero se quitan las listas que no llegan al 3 %</strong> de los votos válidos de la provincia.</li>
-<li><strong>Los escaños se reparten de uno en uno.</strong> Cada escaño se lo lleva la lista que en ese momento tiene la cifra más alta.</li>
-<li><strong>Cuando una lista gana un escaño, su cifra baja.</strong> Para el siguiente reparto, sus votos se dividen entre 2. Si gana otro, se dividen entre 3, y así sucesivamente. Así se evita que la lista más votada se lo lleve todo.</li>
+<li><strong>Cada escaño tiene un precio en votos, el mismo para todas las listas</strong> de la provincia.</li>
+<li><strong>Cada lista gana tantos escaños como veces le cabe ese precio en sus votos.</strong> Los votos que sobran no cuentan.</li>
+<li><strong>El precio se fija para que salgan justo los escaños que elige la provincia,</strong> ni uno más ni uno menos.</li>
 </ol>
 <h3 id="un-ejemplo-real-lleida-en-2023">Un ejemplo real: Lleida en 2023</h3>
-<p>Lleida elige 4 diputados. En 2023 hubo 184.539 votos válidos, y estas listas recibieron más votos:</p>
+<p>Lleida elige 4 diputados. En 2023 hubo 184.539 votos válidos. Para llegar al 3 % hacían falta 5.537 votos: la CUP, con 5.449, se quedó fuera por 88.</p>
+<p>Con un precio de 27.207 votos por escaño salen justo 4 escaños:</p>
 <div class="tw"><table>
 <thead>
 <tr>
 <th>Lista</th>
 <th>Votos</th>
+<th>Veces que le cabe el precio (27.207)</th>
+<th>Diputados</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>PSC</td>
 <td>54.414</td>
+<td>2 veces exactas</td>
+<td>2</td>
 </tr>
 <tr>
 <td>ERC</td>
 <td>34.331</td>
+<td>1 vez, y le sobran 7.124 votos</td>
+<td>1</td>
 </tr>
 <tr>
 <td>Junts</td>
 <td>33.228</td>
+<td>1 vez, y le sobran 6.021 votos</td>
+<td>1</td>
 </tr>
 <tr>
 <td>PP</td>
 <td>23.699</td>
+<td>Ninguna</td>
+<td>0</td>
 </tr>
 <tr>
 <td>Sumar-En Comú Podem</td>
 <td>14.561</td>
+<td>Ninguna</td>
+<td>0</td>
 </tr>
 <tr>
 <td>Vox</td>
 <td>12.560</td>
+<td>Ninguna</td>
+<td>0</td>
 </tr>
 <tr>
 <td>CUP</td>
 <td>5.449</td>
+<td>No llega al 3 %</td>
+<td>0</td>
 </tr>
 </tbody>
 </table></div>
-<p><strong>Antes de empezar.</strong> Para llegar al 3 % de 184.539 votos hacen falta 5.537. La CUP tiene 5.449: se queda fuera por 88 votos.</p>
-<p><strong>Primer escaño.</strong> La cifra más alta es la del PSC: 54.414. El PSC gana un diputado. Desde ahora, para los siguientes escaños, sus votos cuentan divididos entre 2: 27.207.</p>
-<p><strong>Segundo escaño.</strong> Ahora la cifra más alta es la de ERC: 34.331, por encima de Junts (33.228) y del PSC (27.207). ERC gana un diputado y pasa a competir con la mitad: 17.166.</p>
-<p><strong>Tercer escaño.</strong> La más alta es la de Junts: 33.228. Junts gana un diputado y pasa a competir con 16.614.</p>
-<p><strong>Cuarto escaño.</strong> Quedan el PSC con 27.207, el PP con 23.699, ERC con 17.166 y Junts con 16.614. El PSC tiene la cifra más alta y gana su segundo diputado.</p>
+<p>¿Por qué ese precio? Si fuera más alto, el PSC solo cabría una vez y saldrían 3 escaños: faltaría uno. Si bajara a 23.699 o menos, el PP entraría y saldrían 5: sobraría uno. El precio tiene que quedar entre esas dos cifras.</p>
 <p><strong>Resultado:</strong> PSC 2 diputados, ERC 1 y Junts 1.</p>
 <ul>
-<li>Los cuatro diputados valen lo mismo. Hablar de «primer» o «cuarto» escaño solo sirve para hacer el cálculo.</li>
-<li>
-<p>En la práctica, cada escaño de Lleida «costó» unos 27.200 votos: el PSC, con el doble, sacó dos.</p>
-</li>
-<li>
-<p>El PP se quedó a 3.509 votos del cuarto escaño: si hubiera tenido 27.208 votos, habría superado al PSC.</p>
-</li>
+<li>Todos los escaños de Lleida «costaron» lo mismo: unos 27.200 votos cada uno. El PSC, con el doble de votos, sacó el doble de diputados.</li>
+<li>Los cuatro diputados valen lo mismo en el Congreso.</li>
+<li>El PP se quedó a 3.509 votos de su primer diputado: con 27.208 votos habría superado al PSC y le habría quitado su segundo escaño.</li>
 <li>Los votos al PP, a Sumar-En Comú Podem, a Vox y a la CUP no sirvieron para elegir a ningún diputado en Lleida.</li>
 </ul>
+<h3 id="el-calculo-oficial-ronda-a-ronda">El cálculo oficial, ronda a ronda</h3>
+<p>La ley lo calcula de otra forma, pero el resultado es el mismo. Los escaños se dan de uno en uno a la lista con la cifra más alta. Cuando una lista gana un escaño, en las rondas siguientes compite con la mitad de sus votos; si gana otro, con un tercio; y así sucesivamente. Competir con la mitad es lo mismo que exigirle el doble de votos que a los demás para su segundo escaño.</p>
+<p>Las cifras de cada ronda no son lo que cuesta cada escaño. Son el número con el que compite cada lista en esa ronda.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Ronda</th>
+<th>Cifras en competición</th>
+<th>Gana</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.ª</td>
+<td>PSC 54.414 · ERC 34.331 · Junts 33.228 · PP 23.699</td>
+<td>PSC</td>
+</tr>
+<tr>
+<td>2.ª</td>
+<td>ERC 34.331 · Junts 33.228 · PSC 27.207 (la mitad) · PP 23.699</td>
+<td>ERC</td>
+</tr>
+<tr>
+<td>3.ª</td>
+<td>Junts 33.228 · PSC 27.207 · PP 23.699 · ERC 17.166 (la mitad)</td>
+<td>Junts</td>
+</tr>
+<tr>
+<td>4.ª</td>
+<td>PSC 27.207 · PP 23.699 · ERC 17.166 · Junts 16.614 (la mitad)</td>
+<td>PSC</td>
+</tr>
+</tbody>
+</table></div>
+<p>Sumar-En Comú Podem y Vox también compiten en cada ronda, pero sus cifras son más bajas y no ganan ninguna.</p>
+<p>La cifra con la que el PSC gana la última ronda, 27.207, es justo el precio por escaño de la tabla anterior.</p>
 <h2 id="por-que-hay-votos-que-no-eligen-a-nadie">Por qué hay votos que no eligen a nadie</h2>
 <p>Un voto «no elige a nadie» cuando va a una lista que no consigue ningún escaño en esa provincia.</p>
 <ul>

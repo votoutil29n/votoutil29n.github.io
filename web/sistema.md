@@ -23,43 +23,54 @@ En las elecciones generales no gana escaños quien más votos saca en toda Espa�
 
 ## Cómo se reparten los escaños de una provincia
 
-Se usa un método llamado **ley D’Hondt**. La idea es sencilla:
+Se usa un método llamado **ley D’Hondt**. La forma más fácil de entenderlo es pensar en un **precio por escaño**:
 
 1. **Primero se quitan las listas que no llegan al 3 %** de los votos válidos de la provincia.
-2. **Los escaños se reparten de uno en uno.** Cada escaño se lo lleva la lista que en ese momento tiene la cifra más alta.
-3. **Cuando una lista gana un escaño, su cifra baja.** Para el siguiente reparto, sus votos se dividen entre 2. Si gana otro, se dividen entre 3, y así sucesivamente. Así se evita que la lista más votada se lo lleve todo.
+2. **Cada escaño tiene un precio en votos, el mismo para todas las listas** de la provincia.
+3. **Cada lista gana tantos escaños como veces le cabe ese precio en sus votos.** Los votos que sobran no cuentan.
+4. **El precio se fija para que salgan justo los escaños que elige la provincia,** ni uno más ni uno menos.
 
 ### Un ejemplo real: Lleida en 2023
 
-Lleida elige 4 diputados. En 2023 hubo 184.539 votos válidos, y estas listas recibieron más votos:
+Lleida elige 4 diputados. En 2023 hubo 184.539 votos válidos. Para llegar al 3 % hacían falta 5.537 votos: la CUP, con 5.449, se quedó fuera por 88.
 
-| Lista | Votos |
-|---|---|
-| PSC | 54.414 |
-| ERC | 34.331 |
-| Junts | 33.228 |
-| PP | 23.699 |
-| Sumar-En Comú Podem | 14.561 |
-| Vox | 12.560 |
-| CUP | 5.449 |
+Con un precio de 27.207 votos por escaño salen justo 4 escaños:
 
-**Antes de empezar.** Para llegar al 3 % de 184.539 votos hacen falta 5.537. La CUP tiene 5.449: se queda fuera por 88 votos.
+| Lista | Votos | Veces que le cabe el precio (27.207) | Diputados |
+|---|---|---|---|
+| PSC | 54.414 | 2 veces exactas | 2 |
+| ERC | 34.331 | 1 vez, y le sobran 7.124 votos | 1 |
+| Junts | 33.228 | 1 vez, y le sobran 6.021 votos | 1 |
+| PP | 23.699 | Ninguna | 0 |
+| Sumar-En Comú Podem | 14.561 | Ninguna | 0 |
+| Vox | 12.560 | Ninguna | 0 |
+| CUP | 5.449 | No llega al 3 % | 0 |
 
-**Primer escaño.** La cifra más alta es la del PSC: 54.414. El PSC gana un diputado. Desde ahora, para los siguientes escaños, sus votos cuentan divididos entre 2: 27.207.
-
-**Segundo escaño.** Ahora la cifra más alta es la de ERC: 34.331, por encima de Junts (33.228) y del PSC (27.207). ERC gana un diputado y pasa a competir con la mitad: 17.166.
-
-**Tercer escaño.** La más alta es la de Junts: 33.228. Junts gana un diputado y pasa a competir con 16.614.
-
-**Cuarto escaño.** Quedan el PSC con 27.207, el PP con 23.699, ERC con 17.166 y Junts con 16.614. El PSC tiene la cifra más alta y gana su segundo diputado.
+¿Por qué ese precio? Si fuera más alto, el PSC solo cabría una vez y saldrían 3 escaños: faltaría uno. Si bajara a 23.699 o menos, el PP entraría y saldrían 5: sobraría uno. El precio tiene que quedar entre esas dos cifras.
 
 **Resultado:** PSC 2 diputados, ERC 1 y Junts 1.
 
-- Los cuatro diputados valen lo mismo. Hablar de «primer» o «cuarto» escaño solo sirve para hacer el cálculo.
-- En la práctica, cada escaño de Lleida «costó» unos 27.200 votos: el PSC, con el doble, sacó dos.
-
-- El PP se quedó a 3.509 votos del cuarto escaño: si hubiera tenido 27.208 votos, habría superado al PSC.
+- Todos los escaños de Lleida «costaron» lo mismo: unos 27.200 votos cada uno. El PSC, con el doble de votos, sacó el doble de diputados.
+- Los cuatro diputados valen lo mismo en el Congreso.
+- El PP se quedó a 3.509 votos de su primer diputado: con 27.208 votos habría superado al PSC y le habría quitado su segundo escaño.
 - Los votos al PP, a Sumar-En Comú Podem, a Vox y a la CUP no sirvieron para elegir a ningún diputado en Lleida.
+
+### El cálculo oficial, ronda a ronda
+
+La ley lo calcula de otra forma, pero el resultado es el mismo. Los escaños se dan de uno en uno a la lista con la cifra más alta. Cuando una lista gana un escaño, en las rondas siguientes compite con la mitad de sus votos; si gana otro, con un tercio; y así sucesivamente. Competir con la mitad es lo mismo que exigirle el doble de votos que a los demás para su segundo escaño.
+
+Las cifras de cada ronda no son lo que cuesta cada escaño. Son el número con el que compite cada lista en esa ronda.
+
+| Ronda | Cifras en competición | Gana |
+|---|---|---|
+| 1.ª | PSC 54.414 · ERC 34.331 · Junts 33.228 · PP 23.699 | PSC |
+| 2.ª | ERC 34.331 · Junts 33.228 · PSC 27.207 (la mitad) · PP 23.699 | ERC |
+| 3.ª | Junts 33.228 · PSC 27.207 · PP 23.699 · ERC 17.166 (la mitad) | Junts |
+| 4.ª | PSC 27.207 · PP 23.699 · ERC 17.166 · Junts 16.614 (la mitad) | PSC |
+
+Sumar-En Comú Podem y Vox también compiten en cada ronda, pero sus cifras son más bajas y no ganan ninguna.
+
+La cifra con la que el PSC gana la última ronda, 27.207, es justo el precio por escaño de la tabla anterior.
 
 ## Por qué hay votos que no eligen a nadie
 
