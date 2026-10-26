@@ -1,12 +1,13 @@
 """Calcula, para cada circunscripción, cuánto aporta al bloque de izquierdas cada voto.
 
 Medida: escaños que gana la izquierda (de media) con medio punto más de voto para una lista,
-promediando todas las simulaciones y solo las ajustadas. Se compara con la mejor opción de
+promediando todas las simulaciones y solo las ajustadas. Se publica como «de cada 100 resultados» (chg). Se compara con la mejor opción de
 la provincia y se repite en 10 escenarios de control.
 Uso: python3 modelo/clasificar.py <raíz del repositorio>
 Salida: datos/clasificacion.json y datos/resumen.md
 """
 import json, sys, unicodedata
+from decimal import Decimal, ROUND_HALF_UP
 S = sys.argv[1]
 ns = {}; exec(open(f'{S}/modelo/nombres.py', encoding='utf-8').read(), ns)
 ES, name = ns['ES'], ns['name']
@@ -64,6 +65,7 @@ for c, v in SIM['main'].items():
         need = max((k + 1) * qlast - share, (3 - share) if share < 3 else 0)
         opts.append(dict(id=o, name=label(o, R), share=round(share, 1), pseat=round(v['p_seat'][o], 2),
                          seats_now=k, need_pts=round(need, 2),
+                         chg=float(Decimal(repr(m[o] * 100)).quantize(Decimal('0.1'), ROUND_HALF_UP)),  # de cada 100 resultados: escaño más para la izquierda
                          rel=round(rel[o], 2), lo=round(ranges[o][0], 2), hi=round(ranges[o][1], 2),
                          level=level(rel[o]), stable=level(ranges[o][0]) == level(ranges[o][1])))
     opts.sort(key=lambda o: (-o['rel'], -o['share']))
@@ -94,15 +96,20 @@ for d in out:
     d['verdict'] = verdict
     rows.append((d, best, top_alt))
 order = {'Sí': 0, 'En parte': 1, 'Sin disputa': 2, 'No': 3}
-md = ['| Circunscripción (escaños) | Voto que más aporta a la izquierda | Mejor voto fuera del PSOE (rango) | Prob. de escaño | Confianza |', '|---|---|---|---|---|']
+def seat100(ps): return '<1' if ps < 0.005 else str(round(ps * 100))
+def chg100(x): return '<0,1' if x < 0.05 else f(x)
+md = ['| Circunscripción (escaños) | Voto que más aporta a la izquierda | Mejor voto fuera del PSOE | Saca escaño | Escaño más para la izquierda | Escaño más con el PSOE | Confianza |',
+      '|---|---|---|---|---|---|---|']
 for d, best, ta in sorted(rows, key=lambda r: (order[r[0]['verdict']], skey(r[0]['name']))):
     if d['verdict'] == 'No': continue
     bests = ' o '.join(o['name'] for o in d['options'] if o['rel'] >= 0.9)
-    tat = f"{ta['name']}: {round(ta['rel']*100)} % ({round(ta['lo']*100)}–{round(ta['hi']*100)} %)" if ta else '—'
-    ps = ta['pseat'] if ta else None
-    pst = '—' if ps is None else ('>99 %' if ps > 0.995 else '<1 %' if ps < 0.005 else f'{round(ps*100)} %')
+    ps = next((o for o in d['options'] if o['id'] == 'PSOE'), None)
     first = 'Sin disputa' if d['nocontest'] else bests
-    md.append(f"| {d['name']} ({d['seats']}) | {first} | {tat} | {pst} | {d['conf']} |")
+    tan = ta['name'] if ta else '—'
+    sea = f"{seat100(ta['pseat'])} de 100" if ta else '—'
+    tch = f"{chg100(ta['chg'])} de 100" if ta else '—'
+    pch = f"{chg100(ps['chg'])} de 100" if ps else '—'
+    md.append(f"| {d['name']} ({d['seats']}) | {first} | {tan} | {sea} | {tch} | {pch} | {d['conf']} |")
 no = sorted((d['name'] for d, _, _ in rows if d['verdict'] == 'No'), key=skey)
 md.append('')
 md.append(f"**Solo el PSOE aporta escaños a la izquierda ({len(no)}):** " + ', '.join(no[:-1]) + ' y ' + no[-1] + '.')

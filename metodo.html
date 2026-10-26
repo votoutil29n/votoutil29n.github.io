@@ -52,44 +52,45 @@ code { font-family: var(--font-data); font-size: 0.9em; }
 <p>No es una recomendación de voto. Cada persona decide si prefiere votar a su partido o al voto que más aporta a la izquierda en su provincia. La herramienta pone las dos respuestas una al lado de la otra.</p>
 <nav class="toc" aria-label="En esta página"><p class="toc-t">En esta página</p><ol><li><a href="#como-leer-el-resultado">Cómo leer el resultado</a></li><li><a href="#resumen-por-provincia">Resumen por provincia</a></li><li><a href="#metodo">Método</a></li><li><a href="#que-paso-en-2023">Qué pasó en 2023</a></li><li><a href="#validacion">Validación</a></li><li><a href="#partidos-incluidos-y-sesgos-conocidos">Partidos incluidos y sesgos conocidos</a></li><li><a href="#limitaciones-y-contraargumentos">Limitaciones y contraargumentos</a></li><li><a href="#otras-herramientas">Otras herramientas</a></li><li><a href="#reproducir-los-calculos">Reproducir los cálculos</a></li><li><a href="#fuentes">Fuentes</a></li></ol></nav>
 <h2 id="como-leer-el-resultado">Cómo leer el resultado</h2>
-<p>Para cada lista de izquierda de tu provincia, la herramienta compara cuánto aporta un voto con lo que aporta el mejor voto de esa provincia:</p>
+<p>Imagina 100 resultados posibles el 29 de noviembre, según las encuestas y su margen de error. Para cada lista de izquierda de tu provincia, la herramienta da dos cifras:</p>
 <div class="tw"><table>
 <thead>
 <tr>
-<th>Nivel</th>
-<th>Qué significa</th>
+<th>Cifra</th>
+<th>Qué pregunta responde</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Lo máximo</td>
-<td>Aporta al menos el 90 % del mejor voto.</td>
+<td>Saca escaño</td>
+<td>¿En cuántos de cada 100 resultados gana esa lista al menos un escaño?</td>
 </tr>
 <tr>
-<td>Bastante</td>
-<td>Entre el 60 % y el 90 %.</td>
-</tr>
-<tr>
-<td>Poco</td>
-<td>Entre el 30 % y el 60 %.</td>
-</tr>
-<tr>
-<td>Casi nada</td>
-<td>Menos del 30 %: la lista no tiene un escaño en juego, porque no llega a ninguno o porque ya tiene los suyos asegurados.</td>
+<td>Escaño más para la izquierda</td>
+<td>Si esa lista recibe medio punto más de voto, ¿en cuántos de cada 100 resultados gana la izquierda un escaño más?</td>
 </tr>
 </tbody>
 </table></div>
-<p>Si tu voto no está entre los que más aportan, verás dos respuestas: qué votar si priorizas a tu partido y qué votar si priorizas a la izquierda en conjunto. En las provincias donde ningún voto de izquierda cambia apenas el reparto, la herramienta lo dice y no recomienda cambiar.</p>
+<p>Un voto suelto casi nunca decide un escaño. Por eso la segunda cifra mide el efecto de un grupo de votos. Medio punto son unos 3.400 votos en A Coruña, 18.000 en Madrid y 250 en Soria.</p>
+<p>Las dos cifras miden cosas distintas. Un ejemplo de A Coruña:</p>
+<ul>
+<li><strong>El BNG saca escaño en 99 de cada 100 resultados.</strong> Pero medio punto más solo da un escaño más a la izquierda en 2,1 de cada 100. Su escaño ya está asegurado y el segundo queda lejos.</li>
+<li><strong>Frente Amplio saca escaño en 8 de cada 100.</strong> Pero medio punto más da un escaño más a la izquierda en 3,3 de cada 100. Cuando la izquierda va mejor que en las encuestas, se queda a las puertas de un escaño.</li>
+</ul>
+<p>El voto que más aporta es el de la lista que da un escaño más a la izquierda con más frecuencia. Si otra lista llega al 90 % de esa frecuencia, las dos se presentan como empatadas.</p>
+<p>Si tu voto no está entre los que más aportan, verás dos respuestas: qué votar si priorizas a tu partido y qué votar si priorizas a la izquierda en conjunto. Si una de esas listas saca escaño en menos de 15 de cada 100 resultados, la herramienta avisa: en el resto de resultados, un voto a esa lista no elige a nadie. En las provincias donde ningún voto de izquierda cambia apenas el reparto, la herramienta lo dice y no recomienda cambiar.</p>
 <h2 id="resumen-por-provincia">Resumen por provincia</h2>
 <p>En 16 de las 52 circunscripciones, que reparten 185 escaños, una lista a la izquierda del PSOE aporta al bloque tanto o más que el PSOE. En 10 de ellas el resultado aguanta todos los escenarios de control. En otras 9 el PSOE es el voto que más aporta, pero otra lista aporta parte. En 23, casi todas del interior, solo el PSOE aporta escaños a la izquierda. En 4 ningún voto de izquierda cambia apenas el reparto.</p>
-<p>La tabla muestra el voto que más aporta y la mejor opción fuera del PSOE, con el porcentaje que aporta respecto al mejor voto y su rango en los escenarios de control.</p>
+<p>La tabla muestra el voto que más aporta en cada provincia y la mejor opción fuera del PSOE. Para esa opción da las dos cifras, de cada 100 resultados: en cuántos saca escaño y en cuántos medio punto más le da un escaño más a la izquierda. La columna siguiente da esa misma cifra para el PSOE.</p>
 <div class="tw"><table>
 <thead>
 <tr>
 <th>Circunscripción (escaños)</th>
 <th>Voto que más aporta a la izquierda</th>
-<th>Mejor voto fuera del PSOE (rango)</th>
-<th>Prob. de escaño</th>
+<th>Mejor voto fuera del PSOE</th>
+<th>Saca escaño</th>
+<th>Escaño más para la izquierda</th>
+<th>Escaño más con el PSOE</th>
 <th>Confianza</th>
 </tr>
 </thead>
@@ -97,204 +98,262 @@ code { font-family: var(--font-data); font-size: 0.9em; }
 <tr>
 <td>A Coruña (8)</td>
 <td>Frente Amplio-Fronte Ampla o PSdeG-PSOE</td>
-<td>Frente Amplio-Fronte Ampla: 100 % (36–100 %)</td>
-<td>8 %</td>
+<td>Frente Amplio-Fronte Ampla</td>
+<td>8 de 100</td>
+<td>3,3 de 100</td>
+<td>3,1 de 100</td>
 <td>media</td>
 </tr>
 <tr>
 <td>Asturias (7)</td>
 <td>Frente Ampliu</td>
-<td>Frente Ampliu: 100 % (100–100 %)</td>
-<td>30 %</td>
+<td>Frente Ampliu</td>
+<td>30 de 100</td>
+<td>4,6 de 100</td>
+<td>2,6 de 100</td>
 <td>alta</td>
 </tr>
 <tr>
 <td>Barcelona (32)</td>
 <td>PSC o ERC o Comuns-Front Ampli</td>
-<td>ERC: 100 % (97–100 %)</td>
-<td>&gt;99 %</td>
+<td>ERC</td>
+<td>100 de 100</td>
+<td>6,8 de 100</td>
+<td>6,8 de 100</td>
 <td>alta</td>
 </tr>
 <tr>
 <td>Bizkaia (8)</td>
 <td>Frente Amplio-Fronte Zabala</td>
-<td>Frente Amplio-Fronte Zabala: 100 % (71–100 %)</td>
-<td>24 %</td>
+<td>Frente Amplio-Fronte Zabala</td>
+<td>24 de 100</td>
+<td>3,1 de 100</td>
+<td>1,9 de 100</td>
 <td>media</td>
 </tr>
 <tr>
 <td>Castellón (5)</td>
 <td>Compromís-Front Valencià</td>
-<td>Compromís-Front Valencià: 100 % (100–100 %)</td>
-<td>35 %</td>
+<td>Compromís-Front Valencià</td>
+<td>35 de 100</td>
+<td>2,8 de 100</td>
+<td>1,9 de 100</td>
 <td>alta</td>
 </tr>
 <tr>
 <td>Girona (6)</td>
 <td>ERC</td>
-<td>ERC: 100 % (100–100 %)</td>
-<td>&gt;99 %</td>
+<td>ERC</td>
+<td>100 de 100</td>
+<td>3,4 de 100</td>
+<td>2,6 de 100</td>
 <td>alta</td>
 </tr>
 <tr>
 <td>Illes Balears (8)</td>
 <td>Ara Més-Front Ampli</td>
-<td>Ara Més-Front Ampli: 100 % (100–100 %)</td>
-<td>63 %</td>
+<td>Ara Més-Front Ampli</td>
+<td>63 de 100</td>
+<td>4,3 de 100</td>
+<td>2,9 de 100</td>
 <td>alta</td>
 </tr>
 <tr>
 <td>Lugo (4)</td>
 <td>BNG o PSdeG-PSOE</td>
-<td>BNG: 100 % (59–100 %)</td>
-<td>12 %</td>
+<td>BNG</td>
+<td>12 de 100</td>
+<td>2,1 de 100</td>
+<td>2,0 de 100</td>
 <td>media</td>
 </tr>
 <tr>
 <td>Madrid (38)</td>
 <td>Podemos</td>
-<td>Podemos: 100 % (100–100 %)</td>
-<td>90 %</td>
+<td>Podemos</td>
+<td>90 de 100</td>
+<td>14,1 de 100</td>
+<td>12,1 de 100</td>
 <td>alta</td>
 </tr>
 <tr>
 <td>Málaga (11)</td>
 <td>Frente Amplio Andaluz</td>
-<td>Frente Amplio Andaluz: 100 % (62–100 %)</td>
-<td>13 %</td>
+<td>Frente Amplio Andaluz</td>
+<td>13 de 100</td>
+<td>6,1 de 100</td>
+<td>4,4 de 100</td>
 <td>media</td>
 </tr>
 <tr>
 <td>Murcia (10)</td>
 <td>PSOE o Frente Amplio</td>
-<td>Frente Amplio: 98 % (30–100 %)</td>
-<td>6 %</td>
+<td>Frente Amplio</td>
+<td>6 de 100</td>
+<td>4,3 de 100</td>
+<td>4,4 de 100</td>
 <td>media</td>
 </tr>
 <tr>
 <td>S. C. de Tenerife (7)</td>
 <td>Unidad del Pueblo Canario</td>
-<td>Unidad del Pueblo Canario: 100 % (100–100 %)</td>
-<td>54 %</td>
+<td>Unidad del Pueblo Canario</td>
+<td>54 de 100</td>
+<td>4,1 de 100</td>
+<td>2,1 de 100</td>
 <td>alta</td>
 </tr>
 <tr>
 <td>Sevilla (12)</td>
 <td>Frente Amplio Andaluz</td>
-<td>Frente Amplio Andaluz: 100 % (100–100 %)</td>
-<td>45 %</td>
+<td>Frente Amplio Andaluz</td>
+<td>45 de 100</td>
+<td>6,6 de 100</td>
+<td>3,8 de 100</td>
 <td>alta</td>
 </tr>
 <tr>
 <td>Tarragona (6)</td>
 <td>ERC o PSC</td>
-<td>ERC: 100 % (73–100 %)</td>
-<td>&gt;99 %</td>
+<td>ERC</td>
+<td>100 de 100</td>
+<td>2,4 de 100</td>
+<td>2,2 de 100</td>
 <td>media</td>
 </tr>
 <tr>
 <td>Valencia (16)</td>
 <td>PSOE o Compromís-Front Valencià</td>
-<td>Compromís-Front Valencià: 98 % (97–100 %)</td>
-<td>&gt;99 %</td>
+<td>Compromís-Front Valencià</td>
+<td>100 de 100</td>
+<td>4,8 de 100</td>
+<td>4,9 de 100</td>
 <td>alta</td>
 </tr>
 <tr>
 <td>Zaragoza (7)</td>
 <td>CHA-Frente Amplio</td>
-<td>CHA-Frente Amplio: 100 % (100–100 %)</td>
-<td>30 %</td>
+<td>CHA-Frente Amplio</td>
+<td>30 de 100</td>
+<td>5,1 de 100</td>
+<td>2,8 de 100</td>
 <td>alta</td>
 </tr>
 <tr>
 <td>Álava (4)</td>
 <td>PSE-EE</td>
-<td>EH Bildu: 31 % (21–100 %)</td>
-<td>&gt;99 %</td>
+<td>EH Bildu</td>
+<td>100 de 100</td>
+<td>0,9 de 100</td>
+<td>2,8 de 100</td>
 <td>media</td>
 </tr>
 <tr>
 <td>Alicante (12)</td>
 <td>PSOE</td>
-<td>Compromís-Front Valencià: 88 % (67–100 %)</td>
-<td>99 %</td>
+<td>Compromís-Front Valencià</td>
+<td>99 de 100</td>
+<td>3,7 de 100</td>
+<td>4,1 de 100</td>
 <td>alta</td>
 </tr>
 <tr>
 <td>Cádiz (8)</td>
 <td>PSOE</td>
-<td>Adelante Andalucía: 74 % (54–100 %)</td>
-<td>13 %</td>
+<td>Adelante Andalucía</td>
+<td>13 de 100</td>
+<td>2,4 de 100</td>
+<td>3,2 de 100</td>
 <td>media</td>
 </tr>
 <tr>
 <td>Gipuzkoa (6)</td>
 <td>PSE-EE</td>
-<td>EH Bildu: 72 % (63–88 %)</td>
-<td>&gt;99 %</td>
+<td>EH Bildu</td>
+<td>100 de 100</td>
+<td>1,6 de 100</td>
+<td>2,3 de 100</td>
 <td>alta</td>
 </tr>
 <tr>
 <td>Las Palmas (8)</td>
 <td>PSOE</td>
-<td>Unidad del Pueblo Canario: 46 % (44–100 %)</td>
-<td>98 %</td>
+<td>Unidad del Pueblo Canario</td>
+<td>98 de 100</td>
+<td>1,5 de 100</td>
+<td>3,3 de 100</td>
 <td>media</td>
 </tr>
 <tr>
 <td>Lleida (4)</td>
 <td>PSC</td>
-<td>ERC: 58 % (37–100 %)</td>
-<td>&gt;99 %</td>
+<td>ERC</td>
+<td>100 de 100</td>
+<td>1,3 de 100</td>
+<td>2,2 de 100</td>
 <td>media</td>
 </tr>
 <tr>
 <td>Navarra (5)</td>
 <td>PSN-PSOE</td>
-<td>Frente Amplio-Fronte Zabala: 41 % (9–68 %)</td>
-<td>4 %</td>
+<td>Frente Amplio-Fronte Zabala</td>
+<td>4 de 100</td>
+<td>0,9 de 100</td>
+<td>2,2 de 100</td>
 <td>alta</td>
 </tr>
 <tr>
 <td>Ourense (4)</td>
 <td>PSdeG-PSOE</td>
-<td>BNG: 86 % (46–100 %)</td>
-<td>8 %</td>
+<td>BNG</td>
+<td>8 de 100</td>
+<td>1,8 de 100</td>
+<td>2,1 de 100</td>
 <td>media</td>
 </tr>
 <tr>
 <td>Pontevedra (7)</td>
 <td>PSdeG-PSOE</td>
-<td>Frente Amplio-Fronte Ampla: 86 % (25–100 %)</td>
-<td>8 %</td>
+<td>Frente Amplio-Fronte Ampla</td>
+<td>8 de 100</td>
+<td>2,2 de 100</td>
+<td>2,5 de 100</td>
 <td>media</td>
 </tr>
 <tr>
 <td>Guadalajara (3)</td>
 <td>Sin disputa</td>
-<td>Frente Amplio: 0 % (0–0 %)</td>
-<td>&lt;1 %</td>
+<td>Frente Amplio</td>
+<td>&lt;1 de 100</td>
+<td>&lt;0,1 de 100</td>
+<td>0,4 de 100</td>
 <td>alta</td>
 </tr>
 <tr>
 <td>Melilla (1)</td>
 <td>Sin disputa</td>
-<td>Frente Amplio: 0 % (0–0 %)</td>
-<td>&lt;1 %</td>
+<td>Frente Amplio</td>
+<td>&lt;1 de 100</td>
+<td>&lt;0,1 de 100</td>
+<td>&lt;0,1 de 100</td>
 <td>alta</td>
 </tr>
 <tr>
 <td>Salamanca (4)</td>
 <td>Sin disputa</td>
-<td>Frente Amplio: 0 % (0–0 %)</td>
-<td>&lt;1 %</td>
+<td>Frente Amplio</td>
+<td>&lt;1 de 100</td>
+<td>&lt;0,1 de 100</td>
+<td>0,7 de 100</td>
 <td>alta</td>
 </tr>
 <tr>
 <td>Zamora (3)</td>
 <td>Sin disputa</td>
-<td>Frente Amplio: 0 % (0–0 %)</td>
-<td>&lt;1 %</td>
+<td>Frente Amplio</td>
+<td>&lt;1 de 100</td>
+<td>&lt;0,1 de 100</td>
+<td>1,0 de 100</td>
 <td>alta</td>
 </tr>
 </tbody>
@@ -315,8 +374,8 @@ code { font-family: var(--font-data); font-size: 0.9em; }
 <li><strong>Mapa de listas.</strong> Podemos va dentro de ERC en Cataluña, de Compromís-Front Valencià en la Comunitat Valenciana y de Unidad del Pueblo Canario en Canarias. En el resto va solo con un tercio del espacio de la izquierda alternativa: así queda en el 3,2 % donde se presenta, en línea con las encuestas. En Las Palmas, la mitad del voto de NC de 2023 pasa a Coalición Canaria, que ahora va con Primero Canarias. La CUP, UPL y Por Ávila no se presentan; su voto se reparte a prorrata.</li>
 <li><strong>Proyección.</strong> Cada partido cambia en cada provincia en la misma proporción que a nivel nacional o regional. Después se calibra para que la suma nacional coincida con la media de encuestas. El reparto usa D’Hondt con la barrera del 3 %.</li>
 <li><strong>Incertidumbre.</strong> 250.000 simulaciones con errores nacionales, regionales y provinciales, más un error común entre bloques de ±5 %.</li>
-<li><strong>Medida.</strong> Para cada lista, cuántos escaños gana de media el bloque de izquierdas si esa lista recibe medio punto más de voto. Promedio dos versiones: todas las simulaciones y solo las ajustadas (PP+Vox+SALF entre 168 y 184 escaños), que son las que deciden el Gobierno. Un escaño que pasa de una lista de izquierda a otra no cuenta; uno que se quita a PP, Vox, SALF, PNV, Junts o CC, sí.</li>
-<li><strong>Comparación.</strong> Cada lista se compara con el mejor voto de su provincia. Si ninguna lista aporta más de 0,01 escaños por medio punto, la provincia se marca como sin disputa.</li>
+<li><strong>Medida.</strong> Para cada lista, cuántos escaños gana de media el bloque de izquierdas si esa lista recibe medio punto más de voto. Promedio dos versiones: todas las simulaciones y solo las ajustadas (PP+Vox+SALF entre 168 y 184 escaños), que son las que deciden el Gobierno. Un escaño que pasa de una lista de izquierda a otra no cuenta; uno que se quita a PP, Vox, SALF, PNV, Junts o CC, sí. La herramienta lo expresa «de cada 100 resultados»: 0,033 escaños de media equivalen a un escaño más en 3,3 de cada 100.</li>
+<li><strong>Comparación.</strong> Cada lista se compara con el mejor voto de su provincia. Si ninguna lista da un escaño más a la izquierda en al menos 1 de cada 100 resultados, la provincia se marca como sin disputa.</li>
 <li><strong>Confianza.</strong> El cálculo se repite en 10 escenarios de control: otra semilla aleatoria, ERC bajo (como en las encuestas nacionales) y alto (como en el CEO), error entre bloques mayor, Podemos con el 45 % del espacio, izquierda alternativa en 9 % y en 11 %, Adelante Andalucía al 7 %, la reestimación del CIS y NC entera en UPC. Alta: el mejor voto sigue siéndolo en todos. Media: deja de serlo en 1 a 3. Baja: en 4 o más.</li>
 </ol>
 <h2 id="que-paso-en-2023">Qué pasó en 2023</h2>
@@ -386,7 +445,7 @@ code { font-family: var(--font-data); font-size: 0.9em; }
 </table></div>
 <p>Otros tres efectos que conviene conocer:</p>
 <ul>
-<li><strong>El PSOE está entre los votos que más aportan en 38 de las 48 provincias con disputa.</strong> No es una regla del modelo: con D’Hondt, en las provincias pequeñas solo los partidos grandes tienen un escaño en juego. Los niveles («Poco», «Casi nada») comparan con el mejor voto de la provincia, no en términos absolutos, y pueden leerse como un empujón hacia el partido más grande.</li>
+<li><strong>El PSOE está entre los votos que más aportan en 38 de las 48 provincias con disputa.</strong> No es una regla del modelo: con D’Hondt, en las provincias pequeñas solo los partidos grandes tienen un escaño en juego. Aun así, puede leerse como un empujón hacia el partido más grande.</li>
 <li><strong>El umbral del 3 % pesa.</strong> En Madrid, parte de la ventaja de Podemos viene del riesgo de que no llegue al 3 %: si no llega, sus votos no cuentan. Es un efecto real del sistema electoral, pero frágil.</li>
 <li><strong>Sin revisión experta.</strong> La herramienta se ha hecho con ayuda de inteligencia artificial y aún no la ha revisado ningún experto en sistemas electorales. El código y los datos son públicos para que cualquiera pueda comprobarlos.</li>
 </ul>
@@ -395,7 +454,7 @@ code { font-family: var(--font-data); font-size: 0.9em; }
 <ul>
 <li><strong>Las encuestas pueden fallar todas en la misma dirección.</strong> En 2023 infravaloraron al PSOE. El modelo supone un error de unos 2 puntos por partido, y eso puede quedarse corto.</li>
 <li><strong>No hay encuestas provinciales fiables.</strong> El modelo traslada tendencias nacionales y regionales a cada provincia. No capta fenómenos locales.</li>
-<li><strong>Para listas sin escaño, la medida sale de los escenarios en que suben.</strong> En Murcia, Málaga o Galicia, Frente Amplio aporta mucho solo en las simulaciones en que sube varios puntos. La herramienta lo avisa cuando la probabilidad de escaño es baja.</li>
+<li><strong>Para listas sin escaño, la medida sale de los escenarios en que suben.</strong> En Murcia, Málaga o Galicia, Frente Amplio aporta mucho solo en las simulaciones en que sube varios puntos. La herramienta avisa cuando una lista saca escaño en menos de 15 de cada 100 resultados.</li>
 <li><strong>El reparto de Podemos es un supuesto.</strong> Si Podemos fuera más fuerte, cambian Málaga, Murcia, A Coruña y Pontevedra.</li>
 <li><strong>Las candidaturas se proclaman el 2 de noviembre.</strong> Hasta entonces pueden cambiar.</li>
 <li><strong>Los votos que faltan para un escaño son aproximados.</strong> Suponen la participación de 2023 y el escenario central.</li>

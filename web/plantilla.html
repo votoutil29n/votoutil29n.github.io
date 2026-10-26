@@ -167,7 +167,7 @@ footer { font-size: 0.85rem; color: var(--muted); display: grid; gap: 6px; }
       </div>
       <div class="card">
         <h3>Cuánto aporta cada voto a la izquierda</h3>
-        <p class="small">Comparado con el voto que más aporta en tu provincia. Un voto aporta poco si su lista no tiene un escaño en juego: porque no llega a ninguno o porque ya tiene los suyos asegurados. <a href="{{SISTEMA_URL}}">Cómo se reparten los escaños</a>.</p>
+        <p class="small"><span id="rows-intro">Imagina 100 resultados posibles según las encuestas. La cifra de la derecha y la barra dicen en cuántos de ellos unos votos más a esa lista dan un escaño más a la izquierda. Debajo verás en cuántos saca escaño esa lista.</span> No es lo mismo: una lista con sus escaños asegurados saca escaño siempre, pero los votos de más no le dan otro. <a href="{{SISTEMA_URL}}">Cómo se reparten los escaños</a>.</p>
         <div class="rows" id="rows"></div>
         <details>
           <summary>Ver cifras y supuestos</summary>
@@ -197,7 +197,7 @@ footer { font-size: 0.85rem; color: var(--muted); display: grid; gap: 6px; }
 
   <section class="card">
     <h3>En qué se basa</h3>
-    <p>Partimos de los resultados de 2023 y de la media de 14 encuestas publicadas hasta el 17 de octubre. Repartimos los escaños de cada provincia con la ley D’Hondt, el método oficial (<a href="{{SISTEMA_URL}}#como-se-reparten-los-escanos-de-una-provincia">cómo funciona</a>). Como las encuestas fallan, repetimos el cálculo en 250.000 resultados posibles. Para cada lista, medimos cuántos escaños gana la izquierda en conjunto si esa lista recibe un poco más de voto.</p>
+    <p>Partimos de los resultados de 2023 y de la media de 14 encuestas publicadas hasta el 17 de octubre. Repartimos los escaños de cada provincia con la ley D’Hondt, el método oficial (<a href="{{SISTEMA_URL}}#como-se-reparten-los-escanos-de-una-provincia">cómo funciona</a>). Como las encuestas fallan, repetimos el cálculo en 250.000 resultados posibles. Para cada lista, contamos en cuántos de cada 100 resultados medio punto más de voto a esa lista da un escaño más a la izquierda.</p>
     <p>Contamos como izquierda al PSOE y a las listas a su izquierda: Frente Amplio y sus marcas, Podemos, ERC, EH Bildu, BNG, Compromís, Unidad del Pueblo Canario, Adelante Andalucía y Geroa Bai.</p>
     <p class="small">No hay encuestas fiables por provincia, las encuestas pueden fallar y un voto individual casi nunca decide un escaño. Esto compara opciones; no adivina el resultado. <a href="{{METODO_URL}}">Metodología completa</a> · <a href="{{METODO_URL}}#partidos-incluidos-y-sesgos-conocidos">partidos incluidos y sesgos conocidos</a>{{REPO_LINE}}.</p>
   </section>
@@ -213,7 +213,6 @@ const DATA = __DATA__;
 const $ = (id) => document.getElementById(id);
 const VEDA_INI = new Date('2026-11-24T00:00:00+01:00');
 const VEDA_FIN = new Date('2026-11-29T21:00:00+01:00');
-const LEVEL = { max: 'Lo máximo', alto: 'Bastante', bajo: 'Poco', nulo: 'Casi nada' };
 const ART_RE = /^(PSOE|PSC|PSN|PSE|PSdeG|BNG|PP)/;
 const POD_NOTE = {
   CAT: 'Podemos no presenta lista en Cataluña y pide el voto para ERC, que incluye candidatos de Podemos en algunas listas.',
@@ -222,7 +221,7 @@ const POD_NOTE = {
 };
 
 const fmt1 = (x) => x.toLocaleString('es-ES', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
-const fmtInt = (x) => Math.round(x).toLocaleString('es-ES');
+const fmtInt = (x) => String(Math.round(x)).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 const pct = (r) => Math.round(Math.max(0, r) * 100);
 const art = (o) => (ART_RE.test(o.name) ? 'el ' : '') + o.name;
 const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
@@ -230,7 +229,24 @@ const to = (o) => (ART_RE.test(o.name) ? 'al ' : 'a ') + o.name;
 const toMark = (o) => (ART_RE.test(o.name) ? 'al ' : 'a ') + `<mark>${o.name}</mark>`;
 const listTo = (arr, mark) => arr.map(mark ? toMark : to).join(' o ');
 const slug = (s) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-const seatText = (o) => o.pseat >= 0.995 ? 'escaño casi seguro' : o.pseat < 0.005 ? 'sin opciones de escaño' : `${pct(o.pseat)} % de opciones de sacar escaño`;
+// Cifras «de cada 100 resultados»: pseat (saca escaño) y chg (escaño más para la izquierda con medio punto más)
+const grp = (p) => { const v = p.y23.valid * 0.005; return 'unos ' + fmtInt(v >= 1000 ? Math.round(v / 100) * 100 : Math.round(v / 10) * 10); };
+const seatK = (o) => Math.round(o.pseat * 100);
+const seatOf100 = (o) => (seatK(o) < 1 ? 'menos de 1 de cada 100' : `${seatK(o)} de cada 100`);
+const seatSent = (o) => `Saca escaño en ${seatOf100(o)} resultados`;
+const chgOf100 = (x) => (x < 0.05 ? null : `${fmt1(x)} de cada 100`);
+function chgSent(p, x, extra) {
+  const c = chgOf100(x);
+  return `Con ${grp(p)} votos más${extra || ''}, la izquierda ` + (c ? `gana un escaño en ${c} resultados` : 'casi nunca gana un escaño');
+}
+function chgList(p, arr) {
+  if (arr.length === 1) return chgSent(p, arr[0].chg);
+  const vals = arr.map((o) => fmt1(o.chg));
+  if (vals.every((v) => v === vals[0])) return chgSent(p, arr[0].chg, ' a cualquiera de ellas');
+  const parts = arr.map((o, i) => (i === 0 ? `en ${fmt1(o.chg)} de cada 100 resultados con ${art(o)}` : `en ${fmt1(o.chg)} con ${art(o)}`));
+  const last = parts.pop();
+  return `Con ${grp(p)} votos más, la izquierda gana un escaño ${parts.join(', ')} y ${last}`;
+}
 function store(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
 function load(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
 const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
@@ -277,6 +293,7 @@ function decide(p, s) {
   if (p.nocontest) {
     out.head = `En ${p.name}, tu voto casi no cambia los escaños de la izquierda.`;
     out.lines.push('Ninguna lista de izquierda tiene un escaño en juego, así que puedes votar a quien prefieras.');
+    out.lines.push(`Con ${grp(p)} votos más a cualquier lista de izquierda, la izquierda gana un escaño en menos de 1 de cada 100 resultados.`);
     return out;
   }
   if (s === 'NS' || s === 'OTRO' || !cur) {
@@ -284,7 +301,8 @@ function decide(p, s) {
       ? `En ${p.name}, lo que más aporta a la izquierda es votar ${listTo(best, true)}.`
       : `En ${p.name}, lo que más aporta a la izquierda es votar ${toMark(best[0])}.`;
     if (s === 'OTRO') out.lines.push('Un voto a otra lista o en blanco no aporta escaños a la izquierda.');
-    if (best.length > 1) out.lines.push('Aportan lo mismo: elige la que prefieras.');
+    out.lines.push(chgList(p, best) + '.');
+    if (best.length > 1) out.lines.push('Aportan casi lo mismo: elige la que prefieras.');
     addCaution(out, p, null, best, psoe);
     return out;
   }
@@ -293,14 +311,13 @@ function decide(p, s) {
     out.head = best.length > 1
       ? `Tu voto ${toMark(cur)} está entre los que más aportan a la izquierda en ${p.name}.`
       : `Tu voto ${toMark(cur)} es el que más aporta a la izquierda en ${p.name}.`;
-    out.boxes.push({ cls: 'single', k: 'No tienes que elegir', v: `Es tu opción y también la que más aporta al bloque.`, n: cap(seatText(cur)) + '.' });
+    out.boxes.push({ cls: 'single', k: 'No tienes que elegir', v: `Es tu opción y también la que más aporta al bloque.`, n: `${seatSent(cur)}. ${chgSent(p, cur.chg)}.` });
   } else {
     out.head = r >= 0.6 ? `Tu voto ${toMark(cur)} aporta bastante a la izquierda, pero hay una opción que aporta más.`
       : r >= 0.3 ? `Tu voto ${toMark(cur)} aporta poco a la izquierda en ${p.name}.`
       : `Tu voto ${toMark(cur)} casi no aporta escaños a la izquierda en ${p.name}.`;
-    out.boxes.push({ cls: '', k: 'Si priorizas a tu partido', v: `Vota ${to(cur)}.`, n: `Aporta el ${pct(r)} % de lo que aporta el mejor voto. ${cap(seatText(cur))}.` });
-    const times = r < 0.1 ? 'Aporta mucho más que tu opción.' : `Aporta ${fmt1(1 / r)} veces lo que tu opción.`;
-    out.boxes.push({ cls: 'bloc', k: 'Si priorizas a la izquierda', v: `Vota ${listTo(best)}.`, n: times });
+    out.boxes.push({ cls: '', k: 'Si priorizas a tu partido', v: `Vota ${to(cur)}.`, n: `${seatSent(cur)}. ${chgSent(p, cur.chg)}.` });
+    out.boxes.push({ cls: 'bloc', k: 'Si priorizas a la izquierda', v: `Vota ${listTo(best)}.`, n: chgList(p, best) + '.' });
   }
   addCaution(out, p, cur, best, psoe);
   return out;
@@ -308,11 +325,19 @@ function decide(p, s) {
 
 function addCaution(out, p, cur, best, psoe) {
   if (p.conf === 'baja') out.caution.push('En esta provincia el resultado cambia bastante según las encuestas.');
-  if (cur && !cur.stable && cur.rel < 0.9) out.caution.push(`Según los supuestos, ${art(cur)} aporta entre el ${pct(cur.lo)} % y el ${pct(cur.hi)} % del mejor voto.`);
+  if (cur && !cur.stable && cur.rel < 0.9 && cur.hi >= 0.9) out.caution.push(`Con otros supuestos del cálculo (otras encuestas, otro reparto del voto de Podemos…), ${art(cur)} podría aportar tanto como el mejor voto.`);
   const focus = [cur, best[0]].filter((o, i, a) => o && a.indexOf(o) === i && o.rel >= 0.6);
   focus.forEach((o) => {
     if (o.id !== 'PSOE' && o.pseat < 0.15 && psoe) {
-      out.caution.push(`${cap(art(o))} solo saca escaño en el ${Math.max(1, pct(o.pseat))} % de los escenarios: su aporte depende de que suba. Si prefieres lo seguro, ${psoe.rel >= 0.97 ? art(psoe) + ' aporta lo mismo' : art(psoe) + ' aporta el ' + pct(psoe.rel) + ' % del mejor voto'}.`);
+      const k = seatK(o);
+      let t = k < 1
+        ? `${cap(art(o))} casi nunca saca escaño. Cuando no lo saca, un voto a esta lista no elige a nadie.`
+        : `${cap(art(o))} solo saca escaño en ${k} de cada 100 resultados. En los otros ${100 - k}, un voto a esta lista no elige a nadie.`;
+      const pc = chgOf100(psoe.chg);
+      const close = Math.abs(psoe.chg - o.chg) <= 0.1 * Math.max(psoe.chg, o.chg);
+      t += ` ${cap(art(psoe))} saca escaño en ${seatOf100(psoe)} y da un escaño más a la izquierda ` +
+        (!pc ? 'casi nunca.' : close ? `casi con la misma frecuencia (${pc}).` : `en ${pc} resultados.`);
+      out.caution.push(t);
     } else if (o.share < 5.5 && o.pseat > 0.05 && o.pseat < 0.97) {
       out.caution.push(`${cap(art(o))} está cerca del mínimo del 3 %: si no lo alcanza, sus votos no cuentan.`);
     }
@@ -339,19 +364,21 @@ function renderAnswer(p, s) {
 function renderRows(p, s) {
   const cur = current(p, s);
   const rows = $('rows'); rows.innerHTML = '';
+  $('rows-intro').textContent = `Imagina 100 resultados posibles según las encuestas. La cifra de la derecha y la barra dicen en cuántos de ellos ${grp(p)} votos más a esa lista dan un escaño más a la izquierda. Debajo verás en cuántos saca escaño esa lista.`;
   p.options.forEach((o) => {
     const row = el('div', 'row');
     const head = el('div', 'row-head');
     const nm = el('span', 'row-name', o.name);
     if (cur && cur.id === o.id) nm.appendChild(el('span', 'tag', 'TU VOTO'));
-    head.append(nm, el('span', 'lvl', p.nocontest ? 'Casi nada' : LEVEL[o.level]));
+    const c = chgOf100(o.chg);
+    head.append(nm, el('span', 'lvl', c || 'casi nunca'));
     const track = el('div', 'track');
     track.setAttribute('role', 'img');
-    track.setAttribute('aria-label', `${o.name}: ${pct(o.rel)} % del voto que más aporta`);
+    track.setAttribute('aria-label', `${o.name}: ${grp(p)} votos más dan un escaño más a la izquierda ${c ? 'en ' + c + ' resultados' : 'casi nunca'}`);
     const fill = el('div', 'fill' + (o.rel >= 0.9 && !p.nocontest ? ' max' : '') + (cur && cur.id === o.id ? ' me' : ''));
     fill.style.width = (p.nocontest ? 2 : Math.max(2, pct(o.rel))) + '%';
     track.appendChild(fill);
-    row.append(head, track, el('span', 'row-meta', `${fmt1(o.share)} % del voto según las encuestas · ${seatText(o)}`));
+    row.append(head, track, el('span', 'row-meta', `Saca escaño en ${seatOf100(o)} · ${fmt1(o.share)} % del voto según las encuestas`));
     rows.appendChild(row);
   });
   const d = $('detail'); d.innerHTML = '';
@@ -360,12 +387,13 @@ function renderRows(p, s) {
     const votes = o.need_pts * p.y23.valid / 100;
     const v = votes < 500 ? 'menos de 500' : 'unos ' + fmtInt(Math.round(votes / 100) * 100);
     const seats = o.seats_now === 0 ? 'Sin escaño en el resultado más probable' : `${o.seats_now} ${o.seats_now === 1 ? 'escaño' : 'escaños'} en el resultado más probable`;
-    ul.appendChild(el('li', null, `${o.name}: aporta el ${pct(o.rel)} % del mejor voto (entre el ${pct(o.lo)} % y el ${pct(o.hi)} % según los supuestos). ${seats}; le faltan ${v} votos para el siguiente.`));
+    ul.appendChild(el('li', null, `${o.name}: ${seats}; le faltan ${v} votos para el siguiente.`));
   });
   d.appendChild(ul);
   const c = p.contest;
   d.appendChild(el('p', null, `En el resultado más probable, el último escaño de la provincia (el más disputado) es ${c[0]}. Los siguientes en la cola son ${c[1]} y ${c[2]}.`));
   if (p.others.length) d.appendChild(el('p', null, 'Otras listas: ' + p.others.map((x) => `${x.name} ${fmt1(x.share)} %`).join(', ') + '.'));
+  d.appendChild(el('p', 'small', `${cap(grp(p))} votos son medio punto del voto en ${p.name}. Los «resultados posibles» son 250.000 simulaciones con el margen de error de las encuestas. La cifra de escaño más es la media de dos cuentas: todos los resultados y solo los ajustados, en los que PP, Vox y SALF suman entre 168 y 184 escaños y se decide el Gobierno.`));
   d.appendChild(el('p', 'small', `Confianza ${p.conf}: indica si el voto que más aporta sigue siéndolo cuando cambiamos los supuestos del cálculo (otras encuestas, más o menos voto para ERC, Podemos o Adelante Andalucía…). «Resultado más probable» es el reparto con la media de las encuestas. Los votos que faltan suponen que vota la misma gente que en 2023.`));
 }
 

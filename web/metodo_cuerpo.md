@@ -14,8 +14,8 @@ Tres hallazgos más:
 5. **Mapa de listas.** Podemos va dentro de ERC en Cataluña, de Compromís-Front Valencià en la Comunitat Valenciana y de Unidad del Pueblo Canario en Canarias. En el resto va solo con un tercio del espacio de la izquierda alternativa: así queda en el 3,2 % donde se presenta, en línea con las encuestas. En Las Palmas, la mitad del voto de NC de 2023 pasa a Coalición Canaria, que ahora va con Primero Canarias. La CUP, UPL y Por Ávila no se presentan; su voto se reparte a prorrata.
 6. **Proyección.** Cada partido cambia en cada provincia en la misma proporción que a nivel nacional o regional. Después se calibra para que la suma nacional coincida con la media de encuestas. El reparto usa D’Hondt con la barrera del 3 %.
 7. **Incertidumbre.** 250.000 simulaciones con errores nacionales, regionales y provinciales, más un error común entre bloques de ±5 %.
-8. **Medida.** Para cada lista, cuántos escaños gana de media el bloque de izquierdas si esa lista recibe medio punto más de voto. Promedio dos versiones: todas las simulaciones y solo las ajustadas (PP+Vox+SALF entre 168 y 184 escaños), que son las que deciden el Gobierno. Un escaño que pasa de una lista de izquierda a otra no cuenta; uno que se quita a PP, Vox, SALF, PNV, Junts o CC, sí.
-9. **Comparación.** Cada lista se compara con el mejor voto de su provincia. Si ninguna lista aporta más de 0,01 escaños por medio punto, la provincia se marca como sin disputa.
+8. **Medida.** Para cada lista, cuántos escaños gana de media el bloque de izquierdas si esa lista recibe medio punto más de voto. Promedio dos versiones: todas las simulaciones y solo las ajustadas (PP+Vox+SALF entre 168 y 184 escaños), que son las que deciden el Gobierno. Un escaño que pasa de una lista de izquierda a otra no cuenta; uno que se quita a PP, Vox, SALF, PNV, Junts o CC, sí. La herramienta lo expresa «de cada 100 resultados»: 0,033 escaños de media equivalen a un escaño más en 3,3 de cada 100.
+9. **Comparación.** Cada lista se compara con el mejor voto de su provincia. Si ninguna lista da un escaño más a la izquierda en al menos 1 de cada 100 resultados, la provincia se marca como sin disputa.
 10. **Confianza.** El cálculo se repite en 10 escenarios de control: otra semilla aleatoria, ERC bajo (como en las encuestas nacionales) y alto (como en el CEO), error entre bloques mayor, Podemos con el 45 % del espacio, izquierda alternativa en 9 % y en 11 %, Adelante Andalucía al 7 %, la reestimación del CIS y NC entera en UPC. Alta: el mejor voto sigue siéndolo en todos. Media: deja de serlo en 1 a 3. Baja: en 4 o más.
 
 ## Qué pasó en 2023
@@ -55,7 +55,7 @@ La herramienta favorece al bloque de izquierdas: es su objetivo. Dentro de la iz
 
 Otros tres efectos que conviene conocer:
 
-- **El PSOE está entre los votos que más aportan en 38 de las 48 provincias con disputa.** No es una regla del modelo: con D’Hondt, en las provincias pequeñas solo los partidos grandes tienen un escaño en juego. Los niveles («Poco», «Casi nada») comparan con el mejor voto de la provincia, no en términos absolutos, y pueden leerse como un empujón hacia el partido más grande.
+- **El PSOE está entre los votos que más aportan en 38 de las 48 provincias con disputa.** No es una regla del modelo: con D’Hondt, en las provincias pequeñas solo los partidos grandes tienen un escaño en juego. Aun así, puede leerse como un empujón hacia el partido más grande.
 - **El umbral del 3 % pesa.** En Madrid, parte de la ventaja de Podemos viene del riesgo de que no llegue al 3 %: si no llega, sus votos no cuentan. Es un efecto real del sistema electoral, pero frágil.
 - **Sin revisión experta.** La herramienta se ha hecho con ayuda de inteligencia artificial y aún no la ha revisado ningún experto en sistemas electorales. El código y los datos son públicos para que cualquiera pueda comprobarlos.
 
@@ -65,7 +65,7 @@ Otros tres efectos que conviene conocer:
 
 - **Las encuestas pueden fallar todas en la misma dirección.** En 2023 infravaloraron al PSOE. El modelo supone un error de unos 2 puntos por partido, y eso puede quedarse corto.
 - **No hay encuestas provinciales fiables.** El modelo traslada tendencias nacionales y regionales a cada provincia. No capta fenómenos locales.
-- **Para listas sin escaño, la medida sale de los escenarios en que suben.** En Murcia, Málaga o Galicia, Frente Amplio aporta mucho solo en las simulaciones en que sube varios puntos. La herramienta lo avisa cuando la probabilidad de escaño es baja.
+- **Para listas sin escaño, la medida sale de los escenarios en que suben.** En Murcia, Málaga o Galicia, Frente Amplio aporta mucho solo en las simulaciones en que sube varios puntos. La herramienta avisa cuando una lista saca escaño en menos de 15 de cada 100 resultados.
 - **El reparto de Podemos es un supuesto.** Si Podemos fuera más fuerte, cambian Málaga, Murcia, A Coruña y Pontevedra.
 - **Las candidaturas se proclaman el 2 de noviembre.** Hasta entonces pueden cambiar.
 - **Los votos que faltan para un escaño son aproximados.** Suponen la participación de 2023 y el escenario central.
