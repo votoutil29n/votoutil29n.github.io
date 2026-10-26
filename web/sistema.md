@@ -55,6 +55,9 @@ Lleida elige 4 diputados. En 2023 hubo 184.539 votos válidos, y estas listas re
 
 **Resultado:** PSC 2 diputados, ERC 1 y Junts 1.
 
+- Los cuatro diputados valen lo mismo. Hablar de «primer» o «cuarto» escaño solo sirve para hacer el cálculo.
+- En la práctica, cada escaño de Lleida «costó» unos 27.200 votos: el PSC, con el doble, sacó dos.
+
 - El PP se quedó a 3.509 votos del cuarto escaño: si hubiera tenido 27.208 votos, habría superado al PSC.
 - Los votos al PP, a Sumar-En Comú Podem, a Vox y a la CUP no sirvieron para elegir a ningún diputado en Lleida.
 
@@ -68,7 +71,7 @@ Un voto «no elige a nadie» cuando va a una lista que no consigue ningún esca�
 
 ## Por qué tiene sentido pensar en el voto útil
 
-- **El último escaño se decide por pocos votos.** El último escaño de cada provincia es el más disputado. En 2023 se decidió por menos de 5.000 votos en 16 provincias, y por menos de 10.000 en 29. En Girona fueron 285 votos; en Cantabria, 404; en Madrid, 1.340.
+- **El último escaño se decide por pocos votos.** Llamamos «último escaño» al que se reparte al final del cálculo. No vale más que los demás: es el que está más cerca de cambiar de manos. En 2023 se decidió por menos de 5.000 votos en 16 provincias, y por menos de 10.000 en 29. En Girona fueron 285 votos; en Cantabria, 404; en Madrid, 1.340.
 - **Dividir el voto cuesta escaños.** Un ejemplo inventado, en una provincia que elige 4 diputados: el partido A saca el 30 %, el B el 20 %, el C el 14 %, y dos partidos afines, D y E, el 12 % cada uno. Los escaños van a A, B, A y C: D y E se quedan sin nada. Si D y E se hubieran presentado juntos, con el 24 %, habrían ganado un escaño en lugar de C.
 - **Pasa en estas elecciones.** El modelo de esta herramienta estima que presentarse por separado le cuesta a Frente Amplio y Podemos unos 4 escaños en toda España.
 - **El voto que más aporta depende de la provincia.** No es siempre el del partido más grande ni siempre el del pequeño. Es el de la lista de tu bloque que está peleando el último escaño de tu provincia.
@@ -81,6 +84,7 @@ Un voto «no elige a nadie» cuando va a una lista que no consigue ningún esca�
 
 ## Preguntas frecuentes
 
+- **¿Vale más un escaño que otro?** No. Todos los diputados tienen el mismo voto en el Congreso. Lo que cambia de una provincia a otra es cuántos votos hacen falta para ganar uno.
 - **¿Cuenta el voto en blanco?** Cuenta como voto válido, así que sube un poco la cifra necesaria para llegar al 3 %. Pero no elige a ningún diputado.
 - **¿Y el voto nulo o no ir a votar?** No cuentan para el reparto de escaños.
 - **¿Se suman mis votos en toda España?** No para los escaños: cada provincia reparte los suyos por separado.
