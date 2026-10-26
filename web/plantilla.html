@@ -1,0 +1,451 @@
+<title>Voto útil 29-N</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,500..800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: una columna estrecha, como una papeleta: pregunta, respuesta, comparación y detalles plegados. */
+:root {
+  --paper: #f5f6f8;
+  --sheet: #ffffff;
+  --ink: #17202b;
+  --muted: #5b6573;
+  --rule: #d9dee5;
+  --accent: #1f3a5f;
+  --accent-soft: #dfe7f1;
+  --mark: #ffe45c;
+  --mark-ink: #17202b;
+  --other: #a3adb9;
+  --warn: #9a5b06;
+  --font-display: "Archivo", "Arial Narrow", system-ui, sans-serif;
+  --font-body: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-data: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #12161c; --sheet: #1a2028; --ink: #e8ecf1; --muted: #9aa5b3; --rule: #2c3540;
+    --accent: #8fb3e0; --accent-soft: #24324a; --mark: #8a7414; --mark-ink: #fff6c7; --other: #5c6876; --warn: #e2a64a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #12161c; --sheet: #1a2028; --ink: #e8ecf1; --muted: #9aa5b3; --rule: #2c3540;
+  --accent: #8fb3e0; --accent-soft: #24324a; --mark: #8a7414; --mark-ink: #fff6c7; --other: #5c6876; --warn: #e2a64a;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-size: 16px; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 24px 40px;
+}
+main { max-width: 680px; margin: 0 auto; display: grid; gap: 18px; }
+h1, h2, h3 { font-family: var(--font-display); font-stretch: 85%; text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(1.9rem, 6.5vw, 2.6rem); font-weight: 800; line-height: 1.05; letter-spacing: -0.01em; }
+h2 { font-size: clamp(1.35rem, 4.6vw, 1.75rem); font-weight: 800; line-height: 1.15; }
+h3 { font-size: 1.05rem; font-weight: 700; }
+p { margin: 0; }
+header { display: grid; gap: 10px; }
+.eyebrow { font-family: var(--font-data); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+.lede { color: var(--muted); max-width: 60ch; }
+.small { font-size: 0.88rem; color: var(--muted); }
+a { color: var(--accent); }
+
+.card { background: var(--sheet); border: 1px solid var(--rule); border-radius: 6px; padding: 18px; display: grid; gap: 16px; min-width: 0; }
+.field { display: grid; gap: 8px; }
+.label { font-weight: 600; }
+select {
+  font: inherit; color: var(--ink); background: var(--sheet);
+  border: 1px solid var(--rule); border-radius: 4px; padding: 10px 12px; width: 100%;
+}
+fieldset { border: 0; padding: 0; margin: 0; display: grid; gap: 8px; min-width: 0; }
+legend { font-weight: 600; padding: 0; margin-bottom: 8px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--rule); border-radius: 999px; cursor: pointer; background: var(--sheet); }
+.chip input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.chip:has(input:checked) { border-color: var(--accent); background: var(--accent-soft); font-weight: 600; }
+.chip:has(input:focus-visible), select:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; background: var(--sheet); }
+.tabs button { font: inherit; font-weight: 600; padding: 10px 12px; border: 0; background: transparent; color: var(--muted); cursor: pointer; }
+.tabs button[aria-selected="true"] { background: var(--accent); color: var(--sheet); }
+
+.answer { border: 2px solid var(--ink); }
+.answer h2 mark { background: linear-gradient(transparent 12%, var(--mark) 12%, var(--mark) 88%, transparent 88%); color: var(--mark-ink); padding: 0 0.12em; }
+.boxes { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+@media (max-width: 520px) { .boxes { grid-template-columns: 1fr; } }
+.box { border: 1px solid var(--rule); border-radius: 6px; padding: 12px 14px; display: grid; gap: 6px; align-content: start; min-width: 0; }
+.box.bloc { border-color: var(--accent); background: var(--accent-soft); }
+.box .k { font-family: var(--font-data); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+.box .v { font-weight: 700; font-size: 1.05rem; }
+.box.single { grid-column: 1 / -1; }
+.caution { font-size: 0.92rem; color: var(--warn); }
+.note { font-size: 0.92rem; color: var(--muted); }
+
+.rows { display: grid; gap: 14px; }
+.row { display: grid; gap: 4px; }
+.row-head { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+.row-name { font-weight: 600; min-width: 0; }
+.tag { font-family: var(--font-data); font-size: 0.72rem; letter-spacing: 0.04em; color: var(--accent); margin-left: 6px; }
+.lvl { font-family: var(--font-data); font-size: 0.85rem; }
+.track { height: 12px; background: var(--paper); border-radius: 2px; overflow: hidden; }
+.fill { height: 100%; background: var(--other); border-radius: 2px; }
+.fill.max { background: var(--accent); }
+.fill.me { outline: 2px solid var(--ink); outline-offset: -2px; }
+.row-meta { font-size: 0.85rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+details { border-top: 1px solid var(--rule); padding-top: 12px; }
+summary { cursor: pointer; font-weight: 600; }
+.detail { display: grid; gap: 8px; margin-top: 10px; font-size: 0.93rem; }
+.detail ul { margin: 0; padding-left: 1.1em; display: grid; gap: 6px; }
+
+.seatlist { display: grid; gap: 10px; }
+.seatrow { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 12px; align-items: center; }
+.seatrow .nm { font-weight: 600; min-width: 0; }
+.seatrow .pc { font-family: var(--font-data); font-size: 0.85rem; font-variant-numeric: tabular-nums; color: var(--muted); }
+.dots { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 4px; min-height: 12px; }
+.dot { width: 12px; height: 12px; border-radius: 50%; background: var(--other); }
+.dot.left { background: var(--accent); }
+.dots .none { font-size: 0.8rem; color: var(--muted); }
+.legend { display: flex; gap: 14px; font-size: 0.85rem; color: var(--muted); align-items: center; flex-wrap: wrap; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+
+.share { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.share button { font: inherit; font-weight: 600; color: var(--accent); background: transparent; border: 1px solid var(--accent); border-radius: 4px; padding: 8px 14px; cursor: pointer; }
+.notice { padding: 14px 16px; border: 2px solid var(--warn); border-radius: 6px; background: var(--sheet); font-weight: 600; }
+footer { font-size: 0.85rem; color: var(--muted); display: grid; gap: 6px; }
+</style>
+
+<main>
+  <header>
+    <span class="eyebrow">Elecciones generales · 29 de noviembre de 2026</span>
+    <h1>¿Dónde aporta más tu voto a la izquierda?</h1>
+    <p class="lede">Elige tu provincia y a quién piensas votar. Verás cuántos escaños aporta tu voto al bloque de izquierdas y si otra opción aportaría más. La decisión es tuya.</p>
+  </header>
+
+  <p class="notice" id="notice" hidden></p>
+
+  <form class="card" id="form" autocomplete="off">
+    <div class="field">
+      <label class="label" for="prov">Tu provincia</label>
+      <select id="prov"></select>
+    </div>
+    <fieldset>
+      <legend>¿A quién piensas votar?</legend>
+      <div class="chips" id="lists"></div>
+    </fieldset>
+  </form>
+
+  <div class="tabs" role="tablist" aria-label="Elecciones">
+    <button type="button" role="tab" id="tab-now" aria-selected="true" aria-controls="panel-now">29 de noviembre</button>
+    <button type="button" role="tab" id="tab-past" aria-selected="false" aria-controls="panel-past">Qué pasó en 2023</button>
+  </div>
+
+  <section id="panel-now" role="tabpanel" aria-labelledby="tab-now" class="panel">
+    <div style="display:grid;gap:18px">
+      <div class="card answer" aria-live="polite" id="answer"></div>
+      <div class="share">
+        <button type="button" id="share">Compartir esta provincia</button>
+        <span id="share-msg" class="small" role="status"></span>
+      </div>
+      <div class="card">
+        <h3>Cuánto aporta cada voto a la izquierda</h3>
+        <p class="small">Comparado con el voto que más aporta en tu provincia. Un voto aporta poco si su lista no tiene un escaño en juego: porque no llega a ninguno o porque ya tiene los suyos asegurados.</p>
+        <div class="rows" id="rows"></div>
+        <details>
+          <summary>Ver cifras y supuestos</summary>
+          <div class="detail" id="detail"></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="panel-past" role="tabpanel" aria-labelledby="tab-past" class="panel" hidden>
+    <div style="display:grid;gap:18px">
+      <div class="card">
+        <div class="field">
+          <label class="label" for="past">¿A quién votaste en julio de 2023?</label>
+          <select id="past"></select>
+        </div>
+        <div id="past-answer" aria-live="polite" style="display:grid;gap:10px"></div>
+      </div>
+      <div class="card">
+        <h3 id="past-title">Resultado de 2023</h3>
+        <div class="legend"><span><i class="dot left"></i>Izquierda</span><span><i class="dot"></i>Resto</span><span>Cada punto es un escaño</span></div>
+        <div class="seatlist" id="seatlist"></div>
+        <p class="small">Si te empadronaste en otro municipio después del 1 de marzo de 2023, votaste en el anterior: elige esa provincia arriba.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h3>En qué se basa</h3>
+    <p>Partimos de los resultados de 2023 y de la media de 14 encuestas publicadas hasta el 17 de octubre. Repartimos los escaños de cada provincia con la ley D’Hondt en 250.000 escenarios posibles. Para cada lista, medimos cuántos escaños gana el bloque de izquierdas si recibe un poco más de voto.</p>
+    <p>Contamos como izquierda al PSOE y a las listas a su izquierda: Frente Amplio y sus marcas, Podemos, ERC, EH Bildu, BNG, Compromís, Unidad del Pueblo Canario, Adelante Andalucía y Geroa Bai.</p>
+    <p class="small">No hay encuestas fiables por provincia, las encuestas pueden fallar y un voto individual casi nunca decide un escaño. Esto compara opciones; no adivina el resultado. <a href="{{METODO_URL}}">Metodología completa</a>{{REPO_LINE}}.</p>
+  </section>
+
+  <footer>
+    <p>Datos a 25 de octubre de 2026. Las encuestas se pueden publicar hasta el 23 de noviembre; los cálculos pueden cambiar.</p>
+    <p>Proyecto independiente, sin relación con ningún partido. {{AUTOR_LINEA}}Hecho con ayuda de inteligencia artificial (Claude, de Anthropic).</p>
+  </footer>
+</main>
+
+<script>
+const DATA = __DATA__;
+const $ = (id) => document.getElementById(id);
+const VEDA_INI = new Date('2026-11-24T00:00:00+01:00');
+const VEDA_FIN = new Date('2026-11-29T21:00:00+01:00');
+const LEVEL = { max: 'Lo máximo', alto: 'Bastante', bajo: 'Poco', nulo: 'Casi nada' };
+const ART_RE = /^(PSOE|PSC|PSN|PSE|PSdeG|BNG|PP)/;
+const POD_NOTE = {
+  CAT: 'Podemos no presenta lista en Cataluña y pide el voto para ERC, que incluye candidatos de Podemos en algunas listas.',
+  VAL: 'Podemos no presenta lista propia: va dentro de Compromís-Front Valencià.',
+  CAN: 'Podemos no presenta lista propia: va dentro de Unidad del Pueblo Canario.'
+};
+
+const fmt1 = (x) => x.toLocaleString('es-ES', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+const fmtInt = (x) => Math.round(x).toLocaleString('es-ES');
+const pct = (r) => Math.round(Math.max(0, r) * 100);
+const art = (o) => (ART_RE.test(o.name) ? 'el ' : '') + o.name;
+const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
+const to = (o) => (ART_RE.test(o.name) ? 'al ' : 'a ') + o.name;
+const toMark = (o) => (ART_RE.test(o.name) ? 'al ' : 'a ') + `<mark>${o.name}</mark>`;
+const listTo = (arr, mark) => arr.map(mark ? toMark : to).join(' o ');
+const slug = (s) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+const seatText = (o) => o.pseat >= 0.995 ? 'escaño casi seguro' : o.pseat < 0.005 ? 'sin opciones de escaño' : `${pct(o.pseat)} % de opciones de sacar escaño`;
+function store(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+function load(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+
+function prov() { return DATA.find((p) => p.id === $('prov').value); }
+function sel() { const i = document.querySelector('input[name="vote"]:checked'); return i ? i.value : 'NS'; }
+function bestSet(p) { return p.options.filter((o) => o.rel >= 0.9); }
+function current(p, s) { return p.options.find((o) => o.id === (s === 'POD_IN' ? p.podIn : s)); }
+
+function fillProvinces() {
+  const s = $('prov'); const byCom = {};
+  DATA.forEach((p) => { (byCom[p.com] = byCom[p.com] || []).push(p); });
+  Object.keys(byCom).sort((a, b) => a.localeCompare(b, 'es')).forEach((com) => {
+    const g = document.createElement('optgroup'); g.label = com;
+    byCom[com].sort((a, b) => a.name.localeCompare(b.name, 'es')).forEach((p) => {
+      const o = document.createElement('option'); o.value = p.id; o.textContent = p.name; g.appendChild(o);
+    });
+    s.appendChild(g);
+  });
+}
+
+function fillLists(p, keep) {
+  const box = $('lists'); box.innerHTML = '';
+  const items = [...p.options].sort((a, b) => b.share - a.share).map((o) => ({ id: o.id, name: o.name }));
+  if (p.podIn) items.push({ id: 'POD_IN', name: 'Podemos' });
+  items.push({ id: 'NS', name: 'Aún no lo sé' });
+  items.push({ id: 'OTRO', name: 'Otra lista o en blanco' });
+  const chosen = items.some((i) => i.id === keep) ? keep : 'NS';
+  items.forEach((it) => {
+    const lab = el('label', 'chip');
+    const inp = document.createElement('input');
+    inp.type = 'radio'; inp.name = 'vote'; inp.value = it.id; inp.id = 'vote-' + it.id; inp.checked = it.id === chosen;
+    lab.append(inp, el('span', null, it.name));
+    box.appendChild(lab);
+  });
+}
+
+function decide(p, s) {
+  const best = bestSet(p);
+  const cur = current(p, s);
+  const psoe = p.options.find((o) => o.id === 'PSOE');
+  const out = { head: '', lines: [], boxes: [], caution: [] };
+  if (s === 'POD_IN') out.lines.push(POD_NOTE[p.com === 'Cataluña' ? 'CAT' : p.com === 'Canarias' ? 'CAN' : 'VAL']);
+  if (p.nocontest) {
+    out.head = `En ${p.name}, tu voto casi no cambia los escaños de la izquierda.`;
+    out.lines.push('Ninguna lista de izquierda tiene un escaño en juego, así que puedes votar a quien prefieras.');
+    return out;
+  }
+  if (s === 'NS' || s === 'OTRO' || !cur) {
+    out.head = best.length > 1
+      ? `En ${p.name}, lo que más aporta a la izquierda es votar ${listTo(best, true)}.`
+      : `En ${p.name}, lo que más aporta a la izquierda es votar ${toMark(best[0])}.`;
+    if (s === 'OTRO') out.lines.push('Un voto a otra lista o en blanco no aporta escaños a la izquierda.');
+    if (best.length > 1) out.lines.push('Aportan lo mismo: elige la que prefieras.');
+    addCaution(out, p, null, best, psoe);
+    return out;
+  }
+  const r = cur.rel;
+  if (r >= 0.9) {
+    out.head = best.length > 1
+      ? `Tu voto ${toMark(cur)} está entre los que más aportan a la izquierda en ${p.name}.`
+      : `Tu voto ${toMark(cur)} es el que más aporta a la izquierda en ${p.name}.`;
+    out.boxes.push({ cls: 'single', k: 'No tienes que elegir', v: `Es tu opción y también la que más aporta al bloque.`, n: cap(seatText(cur)) + '.' });
+  } else {
+    out.head = r >= 0.6 ? `Tu voto ${toMark(cur)} aporta bastante a la izquierda, pero hay una opción que aporta más.`
+      : r >= 0.3 ? `Tu voto ${toMark(cur)} aporta poco a la izquierda en ${p.name}.`
+      : `Tu voto ${toMark(cur)} casi no aporta escaños a la izquierda en ${p.name}.`;
+    out.boxes.push({ cls: '', k: 'Si priorizas a tu partido', v: `Vota ${to(cur)}.`, n: `Aporta el ${pct(r)} % de lo que aporta el mejor voto. ${cap(seatText(cur))}.` });
+    const times = r < 0.1 ? 'Aporta mucho más que tu opción.' : `Aporta ${fmt1(1 / r)} veces lo que tu opción.`;
+    out.boxes.push({ cls: 'bloc', k: 'Si priorizas a la izquierda', v: `Vota ${listTo(best)}.`, n: times });
+  }
+  addCaution(out, p, cur, best, psoe);
+  return out;
+}
+
+function addCaution(out, p, cur, best, psoe) {
+  if (p.conf === 'baja') out.caution.push('En esta provincia el resultado cambia bastante según las encuestas.');
+  if (cur && !cur.stable && cur.rel < 0.9) out.caution.push(`Según los supuestos, ${art(cur)} aporta entre el ${pct(cur.lo)} % y el ${pct(cur.hi)} % del mejor voto.`);
+  const focus = [cur, best[0]].filter((o, i, a) => o && a.indexOf(o) === i && o.rel >= 0.6);
+  focus.forEach((o) => {
+    if (o.id !== 'PSOE' && o.pseat < 0.15 && psoe) {
+      out.caution.push(`${cap(art(o))} solo saca escaño en el ${Math.max(1, pct(o.pseat))} % de los escenarios: su aporte depende de que suba. Si prefieres lo seguro, ${psoe.rel >= 0.97 ? art(psoe) + ' aporta lo mismo' : art(psoe) + ' aporta el ' + pct(psoe.rel) + ' % del mejor voto'}.`);
+    } else if (o.share < 5.5 && o.pseat > 0.05 && o.pseat < 0.97) {
+      out.caution.push(`${cap(art(o))} está cerca del mínimo del 3 %: si no lo alcanza, sus votos no cuentan.`);
+    }
+  });
+}
+
+function renderAnswer(p, s) {
+  const res = decide(p, s);
+  const a = $('answer'); a.innerHTML = '';
+  const h = el('h2'); h.innerHTML = res.head; a.appendChild(h);
+  res.lines.forEach((t) => a.appendChild(el('p', 'note', t)));
+  if (res.boxes.length) {
+    const g = el('div', 'boxes');
+    res.boxes.forEach((b) => {
+      const d = el('div', 'box ' + b.cls);
+      d.append(el('span', 'k', b.k), el('span', 'v', b.v), el('span', 'small', b.n));
+      g.appendChild(d);
+    });
+    a.appendChild(g);
+  }
+  res.caution.forEach((t) => a.appendChild(el('p', 'caution', t)));
+}
+
+function renderRows(p, s) {
+  const cur = current(p, s);
+  const rows = $('rows'); rows.innerHTML = '';
+  p.options.forEach((o) => {
+    const row = el('div', 'row');
+    const head = el('div', 'row-head');
+    const nm = el('span', 'row-name', o.name);
+    if (cur && cur.id === o.id) nm.appendChild(el('span', 'tag', 'TU VOTO'));
+    head.append(nm, el('span', 'lvl', p.nocontest ? 'Casi nada' : LEVEL[o.level]));
+    const track = el('div', 'track');
+    track.setAttribute('role', 'img');
+    track.setAttribute('aria-label', `${o.name}: ${pct(o.rel)} % del voto que más aporta`);
+    const fill = el('div', 'fill' + (o.rel >= 0.9 && !p.nocontest ? ' max' : '') + (cur && cur.id === o.id ? ' me' : ''));
+    fill.style.width = (p.nocontest ? 2 : Math.max(2, pct(o.rel))) + '%';
+    track.appendChild(fill);
+    row.append(head, track, el('span', 'row-meta', `${fmt1(o.share)} % estimado · ${seatText(o)}`));
+    rows.appendChild(row);
+  });
+  const d = $('detail'); d.innerHTML = '';
+  const ul = el('ul');
+  p.options.forEach((o) => {
+    const votes = o.need_pts * p.y23.valid / 100;
+    const v = votes < 500 ? 'menos de 500' : 'unos ' + fmtInt(Math.round(votes / 100) * 100);
+    const seats = o.seats_now === 0 ? 'Sin escaño en el escenario central' : `${o.seats_now} ${o.seats_now === 1 ? 'escaño' : 'escaños'} en el escenario central`;
+    ul.appendChild(el('li', null, `${o.name}: aporta el ${pct(o.rel)} % del mejor voto (entre el ${pct(o.lo)} % y el ${pct(o.hi)} % según los supuestos). ${seats}; le faltan ${v} votos para el siguiente.`));
+  });
+  d.appendChild(ul);
+  const c = p.contest;
+  d.appendChild(el('p', null, `Último escaño en el escenario central: ${c[0]}. Le siguen ${c[1]} y ${c[2]}.`));
+  if (p.others.length) d.appendChild(el('p', null, 'Otras listas: ' + p.others.map((x) => `${x.name} ${fmt1(x.share)} %`).join(', ') + '.'));
+  d.appendChild(el('p', 'small', `Confianza ${p.conf}: indica si el voto que más aporta sigue siéndolo en 10 escenarios alternativos (otras encuestas, más o menos voto para ERC, Podemos o Adelante Andalucía…). Los votos que faltan suponen la participación de 2023.`));
+}
+
+const PAST_MAP = { PSOE: 'PSOE', FA: 'SUMAR', POD: 'SUMAR', POD_IN: 'SUMAR', ALT: 'SUMAR', ERC: 'ERC', BILDU: 'BILDU', BNG: 'BNG', AA: 'SUMAR', GBAI: 'GBAI' };
+function fillPast(p, s, keep) {
+  const sl = $('past'); sl.innerHTML = '';
+  const items = p.y23.lists.filter((l) => l.left);
+  items.forEach((l) => { const o = document.createElement('option'); o.value = l.id; o.textContent = l.name + (l.id === 'SUMAR' ? ' (con Podemos)' : ''); sl.appendChild(o); });
+  const o = document.createElement('option'); o.value = 'OTRO'; o.textContent = 'Otra lista, en blanco o no voté'; sl.appendChild(o);
+  const want = keep && [...sl.options].some((x) => x.value === keep) ? keep : (PAST_MAP[s] || 'OTRO');
+  sl.value = [...sl.options].some((x) => x.value === want) ? want : sl.options[0].value;
+}
+
+function renderPast(p) {
+  const y = p.y23; const id = $('past').value;
+  const l = y.lists.find((x) => x.id === id);
+  const box = $('past-answer'); box.innerHTML = '';
+  const h = el('h2');
+  if (!l) h.textContent = 'Un voto a otra lista, en blanco o la abstención no cambió el reparto de escaños.';
+  else if (l.seats > 0) h.innerHTML = `En 2023, tu voto ${toMark(l)} ayudó a elegir ${l.seats === 1 ? 'un diputado' : l.seats + ' diputados'}.`;
+  else h.innerHTML = `En 2023, tu voto ${toMark(l)} no eligió a nadie en ${p.name}.`;
+  box.appendChild(h);
+  if (l && l.seats === 0) box.appendChild(el('p', null, `Le faltaron ${fmtInt(l.short)} votos para un escaño.`));
+  if (l && l.id === 'SUMAR') box.appendChild(el('p', 'note', 'Podemos iba dentro de esta candidatura. En 2026 este espacio se presenta dividido.'));
+  box.appendChild(el('p', null, `La izquierda sacó ${y.left_seats} de ${y.seats} escaños. El último fue para ${art({ name: y.last.party })} (su ${y.last.nth}.º diputado); ${art({ name: y.last.runner })} se quedó a ${fmtInt(y.last.margin)} votos de quitárselo.`));
+  $('past-title').textContent = `Resultado de 2023 en ${p.name} (${y.seats} ${y.seats === 1 ? 'escaño' : 'escaños'})`;
+  const list = $('seatlist'); list.innerHTML = '';
+  y.lists.forEach((x) => {
+    const r = el('div', 'seatrow');
+    r.append(el('span', 'nm', x.name), el('span', 'pc', `${fmt1(x.pct)} %`));
+    const dots = el('div', 'dots');
+    if (x.seats === 0) dots.appendChild(el('span', 'none', 'Sin escaño'));
+    for (let i = 0; i < x.seats; i++) dots.appendChild(el('i', 'dot' + (x.left ? ' left' : '')));
+    r.appendChild(dots);
+    list.appendChild(r);
+  });
+}
+
+function setTab(which) {
+  const now = which === 'now';
+  $('tab-now').setAttribute('aria-selected', String(now));
+  $('tab-past').setAttribute('aria-selected', String(!now));
+  $('panel-now').hidden = !now; $('panel-past').hidden = now;
+}
+
+function update() {
+  const p = prov(); const s = sel();
+  renderAnswer(p, s); renderRows(p, s); renderPast(p);
+  store('vu2-prov', p.id); store('vu2-sel', s);
+}
+
+function checkVeda() {
+  const now = new Date(); const n = $('notice');
+  if (now >= VEDA_INI && now < VEDA_FIN) {
+    document.querySelectorAll('main > form, main > .tabs, main > .panel, main > section.card').forEach((e) => { e.hidden = true; });
+    n.textContent = 'La ley electoral prohíbe difundir sondeos en los cinco días anteriores a la votación. Esta herramienta se basa en encuestas, así que está desactivada desde el 24 de noviembre hasta el cierre de los colegios el 29 de noviembre.';
+    n.hidden = false; return true;
+  }
+  if (now >= VEDA_FIN) { n.textContent = 'Las elecciones del 29 de noviembre ya se han celebrado. Esta página conserva los cálculos previos a la votación.'; n.hidden = false; }
+  return false;
+}
+
+async function share() {
+  const p = prov(); const msg = $('share-msg');
+  const url = location.href.split('#')[0] + '#' + slug(p.name);
+  const text = `¿Dónde aporta más tu voto a la izquierda en ${p.name}? Compruébalo para tu provincia:`;
+  if (navigator.share) {
+    try { await navigator.share({ title: 'Voto útil 29-N', text, url }); return; }
+    catch (e) { if (e && e.name === 'AbortError') return; }
+  }
+  try { await navigator.clipboard.writeText(text + ' ' + url); msg.textContent = 'Enlace copiado.'; }
+  catch (e) { msg.textContent = url; }
+}
+
+if (!checkVeda()) {
+  fillProvinces();
+  const h = decodeURIComponent((location.hash || '').slice(1));
+  const fromHash = h ? DATA.find((p) => slug(p.name) === h) : null;
+  const saved = load('vu2-prov');
+  $('prov').value = fromHash ? fromHash.id : (DATA.some((p) => p.id === saved) ? saved : 'Valencia');
+  fillLists(prov(), load('vu2-sel') || 'NS');
+  fillPast(prov(), sel());
+  $('prov').addEventListener('change', () => {
+    fillLists(prov(), sel());
+    fillPast(prov(), sel());
+    try { history.replaceState(null, '', '#' + slug(prov().name)); } catch (e) {}
+    $('share-msg').textContent = '';
+    update();
+  });
+  $('lists').addEventListener('change', () => { fillPast(prov(), sel()); update(); });
+  $('past').addEventListener('change', () => renderPast(prov()));
+  $('form').addEventListener('submit', (e) => e.preventDefault());
+  $('tab-now').addEventListener('click', () => setTab('now'));
+  $('tab-past').addEventListener('click', () => setTab('past'));
+  $('share').addEventListener('click', share);
+  update();
+}
+</script>

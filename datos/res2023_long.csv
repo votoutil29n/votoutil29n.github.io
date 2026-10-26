@@ -1,0 +1,655 @@
+const,party,votes,pct,seats
+A Coruña,People's Party (PP),292272,43.13,4
+A Coruña,Socialists' Party of Galicia (PSdeG–PSOE),190897,28.17,2
+A Coruña,Unite Galicia (Sumar)1,82618,12.19,1
+A Coruña,Galician Nationalist Bloc (BNG),67653,9.98,1
+A Coruña,Vox (Vox),34410,5.08,0
+A Coruña,Animalist Party with the Environment (PACMA)2,3096,0.46,0
+A Coruña,Workers' Front (FO),1011,0.15,0
+A Coruña,Zero Cuts (Recortes Cero),548,0.08,0
+A Coruña,Blank ballots,5197,0.77,
+A Coruña,__VALID__,677702,100.0,
+Álava,Socialist Party of the Basque Country–Basque Country Left (PSE–EE (PSOE)),46775,27.66,1
+Álava,Basque Country Gather (EH Bildu),32987,19.51,1
+Álava,People's Party (PP),30212,17.87,1
+Álava,Basque Nationalist Party (EAJ/PNV),28075,16.6,1
+Álava,Unite (Sumar)1,21561,12.75,0
+Álava,Vox (Vox),6573,3.89,0
+Álava,Animalist Party with the Environment (PACMA)2,773,0.46,0
+Álava,Blank Seats to Leave Empty Seats (EB),619,0.37,0
+Álava,Workers' Front (FO),354,0.21,0
+Álava,Zero Cuts (Recortes Cero),185,0.11,0
+Álava,Communist Party of the Workers of the Basque Country (PCTE/ELAK),165,0.1,0
+Álava,For a Fairer World (PUM+J),106,0.06,0
+Álava,Blank ballots,722,0.43,
+Álava,__VALID__,169107,100.0,
+Albacete,People's Party (PP),88299,39.92,2
+Albacete,Spanish Socialist Workers' Party (PSOE),76322,34.51,2
+Albacete,Vox (Vox),36750,16.61,0
+Albacete,Unite (Sumar)1,15834,7.16,0
+Albacete,Animalist Party with the Environment (PACMA)2,1261,0.57,0
+Albacete,Workers' Front (FO),381,0.17,0
+Albacete,For a Fairer World (PUM+J),325,0.15,0
+Albacete,Zero Cuts (Recortes Cero),185,0.08,0
+Albacete,Blank ballots,1834,0.83,
+Albacete,__VALID__,221191,100.0,
+Alicante,People's Party (PP),330293,36.73,5
+Alicante,Spanish Socialist Workers' Party (PSOE),287737,32.0,4
+Alicante,Vox (Vox),146133,16.25,2
+Alicante,Commitment–Unite: We Unite to Win (Sumar–Compromís)1,115787,12.88,1
+Alicante,Animalist Party with the Environment (PACMA)2,7335,0.82,0
+Alicante,Workers' Front (FO),1724,0.19,0
+Alicante,Self-employed Party (Partido Autónomos),1446,0.16,0
+Alicante,Zero Cuts (Recortes Cero),1135,0.13,0
+Alicante,Walking Together (CJ),1027,0.11,0
+Alicante,Blank ballots,6575,0.73,
+Alicante,__VALID__,899192,100.0,
+Almería,People's Party (PP),131524,40.94,3
+Almería,Spanish Socialist Workers' Party (PSOE),93282,29.04,2
+Almería,Vox (Vox),68364,21.28,1
+Almería,Unite Andalusia (Sumar)1,21485,6.69,0
+Almería,Animalist Party with the Environment (PACMA)2,1962,0.61,0
+Almería,People from Almería–Regionalists for Almería (ALM),874,0.27,0
+Almería,Workers' Front (FO),500,0.16,0
+Almería,For a Fairer World (PUM+J),371,0.12,0
+Almería,Free (LB),210,0.07,0
+Almería,Zero Cuts (Recortes Cero),206,0.06,0
+Almería,Blank ballots,2464,0.77,
+Almería,__VALID__,321242,100.0,
+Asturias,People's Party (PP),212816,35.65,3
+Asturias,Spanish Socialist Workers' Party (PSOE),205049,34.34,2
+Asturias,Unite (Sumar)1,88630,14.85,1
+Asturias,Vox (Vox),74571,12.49,1
+Asturias,Animalist Party with the Environment (PACMA)2,3167,0.53,0
+Asturias,Asturias Exists–Empty Spain (Asturias Existe EV),2314,0.39,0
+Asturias,Communist Party of the Workers of Spain (PCTE),1598,0.27,0
+Asturias,Workers' Front (FO),1176,0.2,0
+Asturias,For a Fairer World (PUM+J),773,0.13,0
+Asturias,Zero Cuts (Recortes Cero),590,0.1,0
+Asturias,State of Spain Unionist Party (PUEDE),269,0.05,0
+Asturias,Blank ballots,6079,1.02,
+Asturias,__VALID__,597032,100.0,
+Ávila,People's Party (PP),42369,43.25,2
+Ávila,Spanish Socialist Workers' Party (PSOE),26828,27.39,1
+Ávila,Vox (Vox),15068,15.38,0
+Ávila,For Ávila (XAV),7362,7.52,0
+Ávila,Unite (Sumar)1,5027,5.13,0
+Ávila,Animalist Party with the Environment (PACMA)2,275,0.28,0
+Ávila,Workers' Front (FO),100,0.1,0
+Ávila,For a Fairer World (PUM+J),91,0.09,0
+Ávila,Communist Party of the Workers of Spain (PCTE),85,0.09,0
+Ávila,Spanish Phalanx of the CNSO (FE de las JONS),77,0.08,0
+Ávila,Zero Cuts (Recortes Cero),42,0.04,0
+Ávila,Blank ballots,632,0.65,
+Ávila,__VALID__,97956,100.0,
+Badajoz,Spanish Socialist Workers' Party (PSOE),153473,39.21,2
+Badajoz,People's Party (PP),148068,37.82,2
+Badajoz,Vox (Vox),53492,13.66,1
+Badajoz,Unite (Sumar)1,26778,6.84,0
+Badajoz,Extremaduran Bloc (BQEx),3885,0.99,0
+Badajoz,Animalist Party with the Environment (PACMA)2,1395,0.36,0
+Badajoz,Workers' Front (FO),477,0.12,0
+Badajoz,For a Fairer World (PUM+J),464,0.12,0
+Badajoz,Zero Cuts (Recortes Cero),204,0.05,0
+Badajoz,Blank ballots,3225,0.82,
+Badajoz,__VALID__,391461,100.0,
+Balearic Islands,People's Party (PP),179303,35.63,3
+Balearic Islands,Socialist Party of the Balearic Islands (PSIB–PSOE),151786,30.16,3
+Balearic Islands,More for Mallorca–More for Menorca–Unite (Més–MxMe–Sumar)1,83487,16.59,1
+Balearic Islands,Vox (Vox),76547,15.21,1
+Balearic Islands,Animalist Party with the Environment (PACMA)2,4969,0.99,0
+Balearic Islands,Workers' Front (FO),1039,0.21,0
+Balearic Islands,Zero Cuts (Recortes Cero),726,0.14,0
+Balearic Islands,Communist Party of the Workers of Spain (PCTE),719,0.14,0
+Balearic Islands,Blank ballots,4704,0.93,
+Balearic Islands,__VALID__,503280,100.0,
+Barcelona,Socialists' Party of Catalonia (PSC–PSOE),952347,35.7,13
+Barcelona,Unite–In Common We Can (Sumar–ECP)1,405993,15.22,5
+Barcelona,People's Party (PP),367519,13.78,5
+Barcelona,Republican Left of Catalonia (ERC),328697,12.32,4
+Barcelona,Together for Catalonia (Junts)2,258159,9.68,3
+Barcelona,Vox (Vox),201775,7.56,2
+Barcelona,Popular Unity Candidacy–For Rupture (CUP–PR),67266,2.52,0
+Barcelona,Animalist Party with the Environment (PACMA)3,28201,1.06,0
+Barcelona,Catalan European Democratic Party–CiU Space (PDeCAT–E–CiU)2,24452,0.92,0
+Barcelona,Workers' Front (FO),6048,0.23,0
+Barcelona,Zero Cuts (Recortes Cero),3104,0.12,0
+Barcelona,Communist Party of the Workers of Catalonia (PCTC),2858,0.11,0
+Barcelona,Blank ballots,21059,0.79,
+Barcelona,__VALID__,2667478,100.0,
+Biscay,Basque Nationalist Party (EAJ/PNV),164188,26.93,2
+Biscay,Socialist Party of the Basque Country–Basque Country Left (PSE–EE (PSOE)),157448,25.82,2
+Biscay,Basque Country Gather (EH Bildu),125867,20.64,2
+Biscay,People's Party (PP),70533,11.57,1
+Biscay,Unite (Sumar)1,66592,10.92,1
+Biscay,Vox (Vox),16069,2.64,0
+Biscay,Animalist Party with the Environment (PACMA)2,2729,0.45,0
+Biscay,Workers' Front (FO),929,0.15,0
+Biscay,For a Fairer World (PUM+J),804,0.13,0
+Biscay,Communist Party of the Workers of the Basque Country (PCTE/ELAK),618,0.1,0
+Biscay,Zero Cuts (Recortes Cero),525,0.09,0
+Biscay,Blank ballots,3391,0.56,
+Biscay,__VALID__,609693,100.0,
+Burgos,People's Party (PP),82329,40.64,2
+Burgos,Spanish Socialist Workers' Party (PSOE),69775,34.45,2
+Burgos,Vox (Vox),25858,12.77,0
+Burgos,Unite (Sumar)1,17508,8.64,0
+Burgos,Burgalese Way (VB),1774,0.88,0
+Burgos,Empty Spain–Castilian Party–Commoners' Land (EV–PCAS–TC),1184,0.58,0
+Burgos,Animalist Party with the Environment (PACMA)2,943,0.47,0
+Burgos,Workers' Front (FO),490,0.24,0
+Burgos,For a Fairer World (PUM+J),354,0.17,0
+Burgos,Communist Party of the Workers of Spain (PCTE),349,0.17,0
+Burgos,Zero Cuts (Recortes Cero),154,0.08,0
+Burgos,Blank ballots,1851,0.91,
+Burgos,__VALID__,202569,100.0,
+Cáceres,Spanish Socialist Workers' Party (PSOE),91692,38.88,2
+Cáceres,People's Party (PP),89633,38.0,2
+Cáceres,Vox (Vox),32076,13.6,0
+Cáceres,Unite (Sumar)1,16354,6.93,0
+Cáceres,Extremaduran Bloc (BQEx),1922,0.81,0
+Cáceres,We Are Cáceres (Somos Cc),963,0.41,0
+Cáceres,Animalist Party with the Environment (PACMA)2,814,0.35,0
+Cáceres,Workers' Front (FO),316,0.13,0
+Cáceres,For a Fairer World (PUM+J),249,0.11,0
+Cáceres,Zero Cuts (Recortes Cero),111,0.05,0
+Cáceres,Blank ballots,1721,0.73,
+Cáceres,__VALID__,275851,100.0,
+Cádiz,People's Party (PP),221703,34.8,4
+Cádiz,Spanish Socialist Workers' Party (PSOE),211200,33.15,3
+Cádiz,Vox (Vox),96720,15.18,1
+Cádiz,Unite Andalusia (Sumar)1,82115,12.89,1
+Cádiz,Forward Andalusia (Adelante Andalucía),9191,1.44,0
+Cádiz,Animalist Party with the Environment (PACMA)2,5937,0.93,0
+Cádiz,Workers' Front (FO),1225,0.19,0
+Cádiz,Walking Together (CJ),745,0.12,0
+Cádiz,For a Fairer World (PUM+J),673,0.11,0
+Cádiz,Zero Cuts (Recortes Cero),486,0.08,0
+Cádiz,Blank ballots,7103,1.11,
+Cádiz,__VALID__,637098,100.0,
+Cantabria,People's Party (PP),147326,42.08,2
+Cantabria,Spanish Socialist Workers' Party (PSOE),116596,33.3,2
+Cantabria,Vox (Vox),49243,14.06,1
+Cantabria,Unite (Sumar)1,29713,8.49,0
+Cantabria,Animalist Party with the Environment (PACMA)2,2089,0.6,0
+Cantabria,Workers' Front (FO),790,0.23,0
+Cantabria,Communist Party of the Workers of Spain (PCTE),598,0.17,0
+Cantabria,Zero Cuts (Recortes Cero),533,0.15,0
+Cantabria,Blank ballots,3262,0.93,
+Cantabria,__VALID__,350150,100.0,
+Castellón,People's Party (PP),108302,35.17,2
+Castellón,Spanish Socialist Workers' Party (PSOE),100530,32.65,2
+Castellón,Vox (Vox),48913,15.88,1
+Castellón,Commitment–Unite: We Unite to Win (Sumar–Compromís)1,44187,14.35,0
+Castellón,Animalist Party with the Environment (PACMA)2,1968,0.64,0
+Castellón,Workers' Front (FO),721,0.23,0
+Castellón,Zero Cuts (Recortes Cero),493,0.16,0
+Castellón,Spanish Phalanx of the CNSO (FE de las JONS),161,0.05,0
+Castellón,Blank ballots,2655,0.86,
+Castellón,__VALID__,307930,100.0,
+Ceuta,People's Party (PP),12918,38.77,1
+Ceuta,Spanish Socialist Workers' Party (PSOE),11332,34.01,0
+Ceuta,Vox (Vox),7752,23.26,0
+Ceuta,Unite (Sumar)1,821,2.46,0
+Ceuta,Workers' Front (FO),53,0.16,0
+Ceuta,Free (LB),53,0.16,0
+Ceuta,Zero Cuts (Recortes Cero),33,0.1,0
+Ceuta,For a Fairer World (PUM+J),31,0.09,0
+Ceuta,Blank ballots,328,0.98,
+Ceuta,__VALID__,33321,100.0,
+Ciudad Real,People's Party (PP),114709,40.54,2
+Ciudad Real,Spanish Socialist Workers' Party (PSOE),100102,35.37,2
+Ciudad Real,Vox (Vox),46046,16.27,1
+Ciudad Real,Unite (Sumar)1,17405,6.15,0
+Ciudad Real,Animalist Party with the Environment (PACMA)2,1319,0.47,0
+Ciudad Real,Workers' Front (FO),447,0.16,0
+Ciudad Real,For a Fairer World (PUM+J),365,0.13,0
+Ciudad Real,Zero Cuts (Recortes Cero),233,0.08,0
+Ciudad Real,Blank ballots,2353,0.83,
+Ciudad Real,__VALID__,282979,100.0,
+Córdoba,People's Party (PP),169976,37.89,2
+Córdoba,Spanish Socialist Workers' Party (PSOE),144080,32.12,2
+Córdoba,Vox (Vox),62526,13.94,1
+Córdoba,Unite Andalusia (Sumar)1,61594,13.73,1
+Córdoba,Animalist Party with the Environment (PACMA)2,2699,0.6,0
+Córdoba,Blank Seats to Leave Empty Seats (EB),942,0.21,0
+Córdoba,Communist Party of the Workers of Spain (PCTE),746,0.17,0
+Córdoba,Workers' Front (FO),701,0.16,0
+Córdoba,For a Fairer World (PUM+J),598,0.13,0
+Córdoba,Zero Cuts (Recortes Cero),392,0.09,0
+Córdoba,Blank ballots,4348,0.97,
+Córdoba,__VALID__,448602,100.0,
+Cuenca,People's Party (PP),45255,39.76,2
+Cuenca,Spanish Socialist Workers' Party (PSOE),42528,37.37,1
+Cuenca,Vox (Vox),17700,15.55,0
+Cuenca,Unite (Sumar)1,6325,5.56,0
+Cuenca,Animalist Party with the Environment (PACMA)2,387,0.34,0
+Cuenca,Workers' Front (FO),207,0.18,0
+Cuenca,Blank Seats to Leave Empty Seats (EB),168,0.15,0
+Cuenca,For a Fairer World (PUM+J),111,0.1,0
+Cuenca,Communist Party of the Workers of Spain (PCTE),100,0.09,0
+Cuenca,Zero Cuts (Recortes Cero),58,0.05,0
+Cuenca,Blank ballots,969,0.85,
+Cuenca,__VALID__,113808,100.0,
+Gipuzkoa,Basque Country Gather (EH Bildu),117321,31.15,2
+Gipuzkoa,Socialist Party of the Basque Country–Basque Country Left (PSE–EE (PSOE)),87709,23.29,2
+Gipuzkoa,Basque Nationalist Party (EAJ/PNV),85026,22.58,2
+Gipuzkoa,Unite (Sumar)1,40081,10.64,0
+Gipuzkoa,People's Party (PP),32721,8.69,0
+Gipuzkoa,Vox (Vox),7877,2.09,0
+Gipuzkoa,Animalist Party with the Environment (PACMA)2,1568,0.42,0
+Gipuzkoa,Blank Seats to Leave Empty Seats (EB),933,0.25,0
+Gipuzkoa,Workers' Front (FO),530,0.14,0
+Gipuzkoa,Zero Cuts (Recortes Cero),442,0.12,0
+Gipuzkoa,Communist Party of the Workers of the Basque Country (PCTE/ELAK),259,0.07,0
+Gipuzkoa,For a Fairer World (PUM+J),149,0.04,0
+Gipuzkoa,Blank ballots,2005,0.53,
+Gipuzkoa,__VALID__,376621,100.0,
+Girona,Socialists' Party of Catalonia (PSC–PSOE),93448,28.93,2
+Girona,Together for Catalonia (Junts)1,63251,19.58,2
+Girona,Republican Left of Catalonia (ERC),47531,14.72,1
+Girona,Unite–In Common We Can (Sumar–ECP)2,35344,10.94,1
+Girona,People's Party (PP),31341,9.7,0
+Girona,Vox (Vox),22706,7.03,0
+Girona,Popular Unity Candidacy–For Rupture (CUP–PR),18229,5.64,0
+Girona,Animalist Party with the Environment (PACMA)3,3531,1.09,0
+Girona,Catalan European Democratic Party–CiU Space (PDeCAT–E–CiU)1,3388,1.05,0
+Girona,Workers' Front (FO),570,0.18,0
+Girona,Communist Party of the Workers of Catalonia (PCTC),420,0.13,0
+Girona,Zero Cuts (Recortes Cero),248,0.08,0
+Girona,Blank ballots,2981,0.92,
+Girona,__VALID__,322988,100.0,
+Granada,People's Party (PP),185996,36.99,3
+Granada,Spanish Socialist Workers' Party (PSOE),165862,32.98,2
+Granada,Vox (Vox),81080,16.12,1
+Granada,Unite Andalusia (Sumar)1,58567,11.65,1
+Granada,Animalist Party with the Environment (PACMA)2,3143,0.63,0
+Granada,Together for Granada (JxG),1218,0.24,0
+Granada,For a Fairer World (PUM+J),765,0.15,0
+Granada,Communist Party of the Workers of Spain (PCTE),695,0.14,0
+Granada,Workers' Front (FO),658,0.13,0
+Granada,Walking Together (CJ),461,0.09,0
+Granada,Zero Cuts (Recortes Cero),343,0.07,0
+Granada,Blank ballots,4057,0.81,
+Granada,__VALID__,502845,100.0,
+Guadalajara,People's Party (PP),51195,36.33,1
+Guadalajara,Spanish Socialist Workers' Party (PSOE),46479,32.98,1
+Guadalajara,Vox (Vox),27126,19.25,1
+Guadalajara,Unite (Sumar)1,12907,9.16,0
+Guadalajara,Animalist Party with the Environment (PACMA)2,1039,0.74,0
+Guadalajara,Workers' Front (FO),304,0.22,0
+Guadalajara,For a Fairer World (PUM+J),249,0.18,0
+Guadalajara,Communist Party of the Workers of Spain (PCTE),191,0.14,0
+Guadalajara,Zero Cuts (Recortes Cero),162,0.11,0
+Guadalajara,Spanish Phalanx of the CNSO (FE de las JONS),118,0.08,0
+Guadalajara,Blank ballots,1143,0.81,
+Guadalajara,__VALID__,140913,100.0,
+Huelva,People's Party (PP),93565,36.43,2
+Huelva,Spanish Socialist Workers' Party (PSOE),92326,35.95,2
+Huelva,Vox (Vox),37572,14.63,1
+Huelva,Unite Andalusia (Sumar)1,26752,10.42,0
+Huelva,For Huelva (XH),1931,0.75,0
+Huelva,Animalist Party with the Environment (PACMA)2,1663,0.65,0
+Huelva,For a Fairer World (PUM+J),368,0.14,0
+Huelva,Zero Cuts (Recortes Cero),217,0.08,0
+Huelva,Blank ballots,2410,0.94,
+Huelva,__VALID__,256804,100.0,
+Huesca,People's Party (PP),45783,38.19,2
+Huesca,Spanish Socialist Workers' Party (PSOE),40307,33.62,1
+Huesca,Vox (Vox),15155,12.64,0
+Huesca,Unite Aragon (Sumar Aragón)1,13774,11.49,0
+Huesca,Aragon Exists–Exists Coalition (Existe),1312,1.09,0
+Huesca,Aragonese Party (PAR),717,0.6,0
+Huesca,Animalist Party with the Environment (PACMA)2,498,0.42,0
+Huesca,Blank Seats to Leave Empty Seats (EB),475,0.4,0
+Huesca,Workers' Front (FO),258,0.22,0
+Huesca,Communist Party of the Workers of Spain (PCTE),137,0.11,0
+Huesca,For a Fairer World (PUM+J),114,0.1,0
+Huesca,Federation of Independents of Aragon (FIA),84,0.07,0
+Huesca,Zero Cuts (Recortes Cero),64,0.05,0
+Huesca,Blank ballots,1217,1.02,
+Huesca,__VALID__,119895,100.0,
+Jaén,People's Party (PP),137617,37.32,2
+Jaén,Spanish Socialist Workers' Party (PSOE),133819,36.29,2
+Jaén,Vox (Vox),54400,14.75,1
+Jaén,Unite Andalusia (Sumar)1,29461,7.99,0
+Jaén,Jaén Deserves More (JM+),8293,2.25,0
+Jaén,Animalist Party with the Environment (PACMA)2,1671,0.45,0
+Jaén,Workers' Front (FO),410,0.11,0
+Jaén,For a Fairer World (PUM+J),360,0.1,0
+Jaén,Zero Cuts (Recortes Cero),203,0.06,0
+Jaén,Blank ballots,2497,0.68,
+Jaén,__VALID__,368731,100.0,
+La Rioja,People's Party (PP),79715,45.64,2
+La Rioja,Spanish Socialist Workers' Party (PSOE),62322,35.68,2
+La Rioja,Vox (Vox),17056,9.77,0
+La Rioja,Unite (Sumar)1,11470,6.57,0
+La Rioja,Animalist Party with the Environment (PACMA)2,723,0.41,0
+La Rioja,Blank Seats to Leave Empty Seats (EB),608,0.35,0
+La Rioja,Workers' Front (FO),295,0.17,0
+La Rioja,Seniors in Action (3e),286,0.16,0
+La Rioja,For a Fairer World (PUM+J),232,0.13,0
+La Rioja,Communist Party of the Workers of Spain (PCTE),224,0.13,0
+La Rioja,Zero Cuts (Recortes Cero),124,0.07,0
+La Rioja,Blank ballots,1608,0.92,
+La Rioja,__VALID__,174663,100.0,
+Las Palmas,Spanish Socialist Workers' Party (PSOE),175671,33.19,3
+Las Palmas,People's Party (PP),136857,25.85,3
+Las Palmas,Vox (Vox),77343,14.61,1
+Las Palmas,Unite Canaries (Sumar)1,54369,10.27,1
+Las Palmas,New Canaries–Canarian Bloc (NC–BC)2,42430,8.02,0
+Las Palmas,Canarian Coalition (CCa)2,33558,6.34,0
+Las Palmas,Animalist Party with the Environment (PACMA)3,3570,0.67,0
+Las Palmas,Canaries Now–Communist Party of the Canarian People (ANC–UP–PCPC)4,883,0.17,0
+Las Palmas,Workers' Front (FO),635,0.12,0
+Las Palmas,For a Fairer World (PUM+J),563,0.11,0
+Las Palmas,Zero Cuts (Recortes Cero),396,0.07,0
+Las Palmas,Blank ballots,3062,0.58,
+Las Palmas,__VALID__,529337,100.0,
+León,People's Party (PP),101605,36.92,2
+León,Spanish Socialist Workers' Party (PSOE),92578,33.64,2
+León,Vox (Vox),35451,12.88,0
+León,Leonese People's Union (UPL),22675,8.24,0
+León,Unite (Sumar)1,18577,6.75,0
+León,Animalist Party with the Environment (PACMA)2,895,0.33,0
+León,Workers' Front (FO),541,0.2,0
+León,Empty Spain (España Vaciada),486,0.18,0
+León,Communist Party of the Workers of Spain (PCTE),319,0.12,0
+León,Regionalist Party of the Leonese Country (PREPAL),309,0.11,0
+León,For a Fairer World (PUM+J),155,0.06,0
+León,Zero Cuts (Recortes Cero),72,0.03,0
+León,Blank ballots,1577,0.57,
+León,__VALID__,275240,100.0,
+Lleida,Socialists' Party of Catalonia (PSC–PSOE),54414,29.49,2
+Lleida,Republican Left of Catalonia (ERC),34331,18.6,1
+Lleida,Together for Catalonia (Junts)1,33228,18.01,1
+Lleida,People's Party (PP),23699,12.84,0
+Lleida,Unite–In Common We Can (Sumar–ECP)2,14561,7.89,0
+Lleida,Vox (Vox),12560,6.81,0
+Lleida,Popular Unity Candidacy–For Rupture (CUP–PR),5449,2.95,0
+Lleida,Catalan European Democratic Party–CiU Space (PDeCAT–E–CiU)1,1865,1.01,0
+Lleida,Animalist Party with the Environment (PACMA)3,1352,0.73,0
+Lleida,Blank Seats to Leave Empty Seats (EB),462,0.25,0
+Lleida,Workers' Front (FO),247,0.13,0
+Lleida,Communist Party of the Workers of Catalonia (PCTC),192,0.1,0
+Lleida,Zero Cuts (Recortes Cero),120,0.07,0
+Lleida,Blank ballots,2059,1.12,
+Lleida,__VALID__,184539,100.0,
+Lugo,People's Party (PP),99769,50.24,3
+Lugo,Socialists' Party of Galicia (PSdeG–PSOE),60163,30.3,1
+Lugo,Galician Nationalist Bloc (BNG),17197,8.66,0
+Lugo,Unite Galicia (Sumar)1,10287,5.18,0
+Lugo,Vox (Vox),8643,4.35,0
+Lugo,Animalist Party with the Environment (PACMA)2,645,0.32,0
+Lugo,Workers' Front (FO),233,0.12,0
+Lugo,For a Fairer World (PUM+J),149,0.08,0
+Lugo,Communist Party of the Workers of Galicia (PCTG),116,0.06,0
+Lugo,Zero Cuts (Recortes Cero),113,0.06,0
+Lugo,Blank ballots,1251,0.63,
+Lugo,__VALID__,198566,100.0,
+Madrid,People's Party (PP),1463183,40.55,16
+Madrid,Spanish Socialist Workers' Party (PSOE),1004599,27.84,10
+Madrid,Unite (Sumar)1,557780,15.46,6
+Madrid,Vox (Vox),506164,14.03,5
+Madrid,Animalist Party with the Environment (PACMA)2,21742,0.6,0
+Madrid,Workers' Front (FO),7652,0.21,0
+Madrid,For a Fairer World (PUM+J),6749,0.19,0
+Madrid,Zero Cuts (Recortes Cero),3784,0.1,0
+Madrid,Communist Party of the Workers of Spain (PCTE),3407,0.09,0
+Madrid,Humanist Party (PH),2902,0.08,0
+Madrid,Spanish Phalanx of the CNSO (FE de las JONS),1751,0.05,0
+Madrid,Blank ballots,28960,0.8,
+Madrid,__VALID__,3608673,100.0,
+Málaga,People's Party (PP),302000,38.31,5
+Málaga,Spanish Socialist Workers' Party (PSOE),239172,30.34,3
+Málaga,Vox (Vox),129758,16.46,2
+Málaga,Unite Andalusia (Sumar)1,96652,12.26,1
+Málaga,Animalist Party with the Environment (PACMA)2,8487,1.08,0
+Málaga,Workers' Front (FO),1662,0.21,0
+Málaga,For a Fairer World (PUM+J),1519,0.19,0
+Málaga,Zero Cuts (Recortes Cero),888,0.11,0
+Málaga,Walking Together (CJ),691,0.09,0
+Málaga,Blank ballots,7509,0.95,
+Málaga,__VALID__,788338,100.0,
+Melilla,People's Party (PP),13446,49.16,1
+Melilla,Spanish Socialist Workers' Party (PSOE),6943,25.39,0
+Melilla,Vox (Vox),4359,15.94,0
+Melilla,Coalition for Melilla (CpM),1298,4.75,0
+Melilla,Unite (Sumar)1,827,3.02,0
+Melilla,Animalist Party with the Environment (PACMA),160,0.59,0
+Melilla,For a Fairer World (PUM+J),40,0.15,0
+Melilla,Zero Cuts (Recortes Cero),23,0.08,0
+Melilla,Blank ballots,253,0.93,
+Melilla,__VALID__,27349,100.0,
+Murcia,People's Party (PP),307972,41.18,4
+Murcia,Spanish Socialist Workers' Party (PSOE),189210,25.3,3
+Murcia,Vox (Vox),163124,21.81,2
+Murcia,Unite (Sumar)1,71578,9.57,1
+Murcia,Animalist Party with the Environment (PACMA)2,5063,0.68,0
+Murcia,For My Region (Por Mi Región)3,1698,0.23,0
+Murcia,Blank Seats to Leave Empty Seats (EB),1377,0.18,0
+Murcia,Workers' Front (FO),1201,0.16,0
+Murcia,Zero Cuts (Recortes Cero),546,0.07,0
+Murcia,Walking Together (CJ),453,0.06,0
+Murcia,Spanish Phalanx of the CNSO (FE de las JONS),376,0.05,0
+Murcia,System Money Referendum (+RDS+),165,0.02,0
+Murcia,Blank ballots,5034,0.67,
+Murcia,__VALID__,747797,100.0,
+Navarre,Socialist Party of Navarre (PSN–PSOE),93553,27.37,2
+Navarre,Basque Country Gather (EH Bildu),58954,17.25,1
+Navarre,People's Party (PP)1,57134,16.71,1
+Navarre,Navarrese People's Union (UPN)1,52188,15.27,1
+Navarre,Unite (Sumar)2,43922,12.85,0
+Navarre,Vox (Vox),19491,5.7,0
+Navarre,Yes to the Future (GBai),9938,2.91,0
+Navarre,Animalist Party with the Environment (PACMA)3,1530,0.45,0
+Navarre,For a Fairer World (PUM+J),1002,0.29,0
+Navarre,Workers' Front (FO),679,0.2,0
+Navarre,Communist Party of the Workers of Spain (PCTE),311,0.09,0
+Navarre,Zero Cuts (Recortes Cero),252,0.07,0
+Navarre,Blank ballots,2890,0.85,
+Navarre,__VALID__,341844,100.0,
+Ourense,People's Party (PP),93182,50.02,3
+Ourense,Socialists' Party of Galicia (PSdeG–PSOE),56035,30.08,1
+Ourense,Galician Nationalist Bloc (BNG),15317,8.22,0
+Ourense,Unite Galicia (Sumar)1,10171,5.46,0
+Ourense,Vox (Vox),9080,4.87,0
+Ourense,Animalist Party with the Environment (PACMA)2,700,0.38,0
+Ourense,Workers' Front (FO),182,0.1,0
+Ourense,Citizens of Democratic Centre (CCD),153,0.08,0
+Ourense,For a Fairer World (PUM+J),144,0.08,0
+Ourense,Communist Party of the Workers of Galicia (PCTG),101,0.05,0
+Ourense,Zero Cuts (Recortes Cero),97,0.05,0
+Ourense,Blank ballots,1109,0.6,
+Ourense,__VALID__,186271,100.0,
+Palencia,People's Party (PP),40709,41.98,2
+Palencia,Spanish Socialist Workers' Party (PSOE),33613,34.67,1
+Palencia,Vox (Vox),12504,12.9,0
+Palencia,Unite (Sumar)1,5877,6.06,0
+Palencia,Let's Go Palencia (VP),1917,1.98,0
+Palencia,Empty Spain (España Vaciada),384,0.4,0
+Palencia,Alive Land Palencia Independent Group (GIPTV),366,0.38,0
+Palencia,Animalist Party with the Environment (PACMA)2,295,0.3,0
+Palencia,Workers' Front (FO),139,0.14,0
+Palencia,For a Fairer World (PUM+J),99,0.1,0
+Palencia,Communist Party of the Workers of Spain (PCTE),80,0.08,0
+Palencia,Spanish Phalanx of the CNSO (FE de las JONS),71,0.07,0
+Palencia,Zero Cuts (Recortes Cero),42,0.04,0
+Palencia,Walking Together (CJ),33,0.03,0
+Palencia,Blank ballots,833,0.86,
+Palencia,__VALID__,96962,100.0,
+Pontevedra,People's Party (PP),227658,39.72,3
+Pontevedra,Socialists' Party of Galicia (PSdeG–PSOE),179737,31.36,3
+Pontevedra,Unite Galicia (Sumar)1,75615,13.19,1
+Pontevedra,Galician Nationalist Bloc (BNG),53828,9.39,0
+Pontevedra,Vox (Vox),27539,4.81,0
+Pontevedra,Animalist Party with the Environment (PACMA)2,3003,0.52,0
+Pontevedra,Workers' Front (FO),884,0.15,0
+Pontevedra,Zero Cuts (Recortes Cero),510,0.09,0
+Pontevedra,Communist Party of the Workers of Galicia (PCTG),485,0.08,0
+Pontevedra,Blank ballots,3865,0.67,
+Pontevedra,__VALID__,573124,100.0,
+Salamanca,People's Party (PP),93318,46.87,3
+Salamanca,Spanish Socialist Workers' Party (PSOE),60718,30.49,1
+Salamanca,Vox (Vox),29203,14.67,0
+Salamanca,Unite (Sumar)1,11012,5.53,0
+Salamanca,Empty Spain (España Vaciada),1062,0.53,0
+Salamanca,Animalist Party with the Environment (PACMA)2,631,0.32,0
+Salamanca,Regionalist Party of the Leonese Country (PREPAL),489,0.25,0
+Salamanca,Communist Party of the Workers of Spain (PCTE),325,0.16,0
+Salamanca,Workers' Front (FO),278,0.14,0
+Salamanca,For a Fairer World (PUM+J),205,0.1,0
+Salamanca,Walking Together (CJ),140,0.07,0
+Salamanca,Zero Cuts (Recortes Cero),80,0.04,0
+Salamanca,Blank ballots,1649,0.83,
+Salamanca,__VALID__,199110,100.0,
+Santa Cruz de Tenerife,People's Party (PP),174770,35.35,3
+Santa Cruz de Tenerife,Spanish Socialist Workers' Party (PSOE),165590,33.49,3
+Santa Cruz de Tenerife,Canarian Coalition (CCa)1,82805,16.75,1
+Santa Cruz de Tenerife,Unite Canaries (Sumar)2,53632,10.85,0
+Santa Cruz de Tenerife,Animalist Party with the Environment (PACMA)3,6147,1.24,0
+Santa Cruz de Tenerife,New Canaries–Canarian Bloc (NC–BC)1,3165,0.64,0
+Santa Cruz de Tenerife,Workers' Front (FO),1619,0.33,0
+Santa Cruz de Tenerife,Canaries Now–Communist Party of the Canarian People (ANC–UP–PCPC)4,791,0.16,0
+Santa Cruz de Tenerife,Zero Cuts (Recortes Cero),766,0.15,0
+Santa Cruz de Tenerife,Blank ballots,5088,1.03,
+Santa Cruz de Tenerife,__VALID__,494373,100.0,
+Segovia,People's Party (PP),39894,45.02,2
+Segovia,Spanish Socialist Workers' Party (PSOE),27113,30.6,1
+Segovia,Vox (Vox),12510,14.12,0
+Segovia,Unite (Sumar)1,7137,8.05,0
+Segovia,Animalist Party with the Environment (PACMA)2,307,0.35,0
+Segovia,Seniors in Action (3e),198,0.22,0
+Segovia,Workers' Front (FO),183,0.21,0
+Segovia,For a Fairer World (PUM+J),136,0.15,0
+Segovia,Walking Together (CJ),102,0.12,0
+Segovia,Communist Party of the Workers of Spain (PCTE),94,0.11,0
+Segovia,Zero Cuts (Recortes Cero),64,0.07,0
+Segovia,Blank ballots,875,0.99,
+Segovia,__VALID__,88613,100.0,
+Seville,Spanish Socialist Workers' Party (PSOE),387760,36.6,5
+Seville,People's Party (PP),353663,33.38,4
+Seville,Unite Andalusia (Sumar)1,148745,14.04,2
+Seville,Vox (Vox),141087,13.32,1
+Seville,Animalist Party with the Environment (PACMA)2,9288,0.88,0
+Seville,Workers' Front (FO),1950,0.18,0
+Seville,For a Fairer World (PUM+J),1765,0.17,0
+Seville,Communist Party of the Workers of Spain (PCTE),1522,0.14,0
+Seville,Zero Cuts (Recortes Cero),1034,0.1,0
+Seville,Walking Together (CJ),912,0.09,0
+Seville,Spanish Phalanx of the CNSO (FE de las JONS),681,0.06,0
+Seville,Blank ballots,10951,1.03,
+Seville,__VALID__,1059358,100.0,
+Soria,People's Party (PP),18895,37.22,1
+Soria,Spanish Socialist Workers' Party (PSOE),14966,29.48,1
+Soria,Soria Now! (SY),9697,19.1,0
+Soria,Vox (Vox),4978,9.81,0
+Soria,Unite (Sumar)1,1711,3.37,0
+Soria,Animalist Party with the Environment (PACMA)2,94,0.19,0
+Soria,Workers' Front (FO),68,0.13,0
+Soria,Communist Party of the Workers of Spain (PCTE),43,0.08,0
+Soria,For a Fairer World (PUM+J),23,0.05,0
+Soria,Zero Cuts (Recortes Cero),9,0.02,0
+Soria,Blank ballots,285,0.56,
+Soria,__VALID__,50769,100.0,
+Tarragona,Socialists' Party of Catalonia (PSC–PSOE),121126,32.91,2
+Tarragona,Republican Left of Catalonia (ERC),55461,15.07,1
+Tarragona,People's Party (PP),51061,13.87,1
+Tarragona,Unite–In Common We Can (Sumar–ECP)2,41719,11.34,1
+Tarragona,Together for Catalonia (Junts)1,40791,11.08,1
+Tarragona,Vox (Vox),38039,10.34,0
+Tarragona,Popular Unity Candidacy–For Rupture (CUP–PR),8700,2.36,0
+Tarragona,Animalist Party with the Environment (PACMA)3,3797,1.03,0
+Tarragona,Catalan European Democratic Party–CiU Space (PDeCAT–E–CiU)1,2311,0.63,0
+Tarragona,Workers' Front (FO),661,0.18,0
+Tarragona,Communist Party of the Workers of Catalonia (PCTC),405,0.11,0
+Tarragona,Zero Cuts (Recortes Cero),267,0.07,0
+Tarragona,Catalonia Among Neighbors (EVR),265,0.07,0
+Tarragona,United Yes (Unidos SI),253,0.07,0
+Tarragona,Blank ballots,3168,0.86,
+Tarragona,__VALID__,368024,100.0,
+Teruel,People's Party (PP),26586,35.02,2
+Teruel,Spanish Socialist Workers' Party (PSOE),22226,29.28,1
+Teruel,Teruel Exists–Exists Coalition (Existe),11348,14.95,0
+Teruel,Vox (Vox),9932,13.08,0
+Teruel,Unite Aragon (Sumar Aragón)1,4126,5.44,0
+Teruel,Aragonese Party (PAR),711,0.94,0
+Teruel,Animalist Party with the Environment (PACMA)2,172,0.23,0
+Teruel,Blank Seats to Leave Empty Seats (EB),135,0.18,0
+Teruel,Workers' Front (FO),94,0.12,0
+Teruel,Communist Party of the Workers of Spain (PCTE),60,0.08,0
+Teruel,Zero Cuts (Recortes Cero),49,0.06,0
+Teruel,For a Fairer World (PUM+J),36,0.05,0
+Teruel,Federation of Independents of Aragon (FIA),28,0.04,0
+Teruel,Blank ballots,410,0.54,
+Teruel,__VALID__,75913,100.0,
+Toledo,People's Party (PP),146533,37.84,3
+Toledo,Spanish Socialist Workers' Party (PSOE),126072,32.56,2
+Toledo,Vox (Vox),76044,19.64,1
+Toledo,Unite (Sumar)1,31876,8.23,0
+Toledo,Animalist Party with the Environment (PACMA)2,2024,0.52,0
+Toledo,Workers' Front (FO),985,0.25,0
+Toledo,For a Fairer World (PUM+J),499,0.13,0
+Toledo,Spanish Phalanx of the CNSO (FE de las JONS),281,0.07,0
+Toledo,Zero Cuts (Recortes Cero),275,0.07,0
+Toledo,Blank ballots,2611,0.67,
+Toledo,__VALID__,387200,100.0,
+Valencia,People's Party (PP),483469,33.64,6
+Valencia,Spanish Socialist Workers' Party (PSOE),461353,32.1,5
+Valencia,Commitment–Unite: We Unite to Win (Sumar–Compromís)1,242839,16.9,3
+Valencia,Vox (Vox),218657,15.21,2
+Valencia,Animalist Party with the Environment (PACMA)2,10334,0.72,0
+Valencia,Workers' Front (FO),2919,0.2,0
+Valencia,For a Fairer World (PUM+J),1778,0.12,0
+Valencia,Zero Cuts (Recortes Cero),1773,0.12,0
+Valencia,Valencian Welfare State (EVB),1442,0.1,0
+Valencia,Walking Together (CJ),1056,0.07,0
+Valencia,Spanish Phalanx of the CNSO (FE de las JONS),731,0.05,0
+Valencia,Blank ballots,10810,0.75,
+Valencia,__VALID__,1437161,100.0,
+Valladolid,People's Party (PP),129170,40.84,2
+Valladolid,Spanish Socialist Workers' Party (PSOE),103596,32.75,2
+Valladolid,Vox (Vox),47948,15.16,1
+Valladolid,Unite (Sumar)1,28049,8.87,0
+Valladolid,Empty Spain (España Vaciada),1226,0.39,0
+Valladolid,Animalist Party with the Environment (PACMA)2,1105,0.35,0
+Valladolid,Workers' Front (FO),601,0.19,0
+Valladolid,Blank Seats to Leave Empty Seats (EB),583,0.18,0
+Valladolid,Castilian Unity (UdCa),463,0.15,0
+Valladolid,For a Fairer World (PUM+J),376,0.12,0
+Valladolid,Communist Party of the Workers of Spain (PCTE),335,0.11,0
+Valladolid,Spanish Phalanx of the CNSO (FE de las JONS),164,0.05,0
+Valladolid,Zero Cuts (Recortes Cero),159,0.05,0
+Valladolid,Civic Force (Fuerza Cívica),115,0.04,0
+Valladolid,Blank ballots,2419,0.76,
+Valladolid,__VALID__,316309,100.0,
+Zamora,People's Party (PP),46196,44.67,2
+Zamora,Spanish Socialist Workers' Party (PSOE),33601,32.49,1
+Zamora,Vox (Vox),13652,13.2,0
+Zamora,Unite (Sumar)1,5839,5.65,0
+Zamora,Zamora Yes (ZSí),1843,1.78,0
+Zamora,Leonese People's Union (UPL),526,0.51,0
+Zamora,Animalist Party with the Environment (PACMA)1,313,0.3,0
+Zamora,Regionalist Party of the Leonese Country (PREPAL),166,0.16,0
+Zamora,Workers' Front (FO),121,0.12,0
+Zamora,Communist Party of the Workers of Spain (PCTE),100,0.1,0
+Zamora,For a Fairer World (PUM+J),81,0.08,0
+Zamora,Zero Cuts (Recortes Cero),50,0.05,0
+Zamora,Blank ballots,922,0.89,
+Zamora,__VALID__,103410,100.0,
+Zaragoza,People's Party (PP),186776,36.01,3
+Zaragoza,Spanish Socialist Workers' Party (PSOE),159858,30.82,2
+Zaragoza,Vox (Vox),79376,15.3,1
+Zaragoza,Unite Aragon (Sumar Aragón)1,69925,13.48,1
+Zaragoza,Aragon Exists–Exists Coalition (Existe),7780,1.5,0
+Zaragoza,Aragonese Party (PAR),2745,0.53,0
+Zaragoza,Animalist Party with the Environment (PACMA)2,2428,0.47,0
+Zaragoza,Blank Seats to Leave Empty Seats (EB),2146,0.41,0
+Zaragoza,Workers' Front (FO),1026,0.2,0
+Zaragoza,Communist Party of the Workers of Spain (PCTE),561,0.11,0
+Zaragoza,For a Fairer World (PUM+J),419,0.08,0
+Zaragoza,Federation of Independents of Aragon (FIA),394,0.08,0
+Zaragoza,Zero Cuts (Recortes Cero),306,0.06,0
+Zaragoza,Spanish Phalanx of the CNSO (FE de las JONS),272,0.05,0
+Zaragoza,Blank ballots,4693,0.9,
+Zaragoza,__VALID__,518705,100.0,

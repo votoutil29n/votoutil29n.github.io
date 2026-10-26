@@ -1,0 +1,11 @@
+0.05 seed2 {"SEED":7}
+0.05 ercLow {"ERC_RATIO":1.12}
+0.05 ercHigh {"ERC_RATIO":1.45}
+0.08 blocWide {}
+0.05 podHigh {"FPOD":0.45}
+0.05 altLow {"ALT_TARGET":9.0}
+0.05 altHigh {"ALT_TARGET":11.0}
+0.05 aaHigh {"AA_TOTAL":7.0}
+0.05 cis {"PP":28.0,"PSOE":28.0,"VOX":17.8,"ALT_TARGET":10.8}
+0.05 ncFull {"NC_UPC":1.0}
+0.05 merge {"MERGE":1}

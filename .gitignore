@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+datos/wp/
+web/vista_previa.html
