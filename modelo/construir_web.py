@@ -18,18 +18,19 @@ t = open(f'{S}/web/plantilla.html', encoding='utf-8').read().replace('__DATA__',
 autor = cfg.get('autor', '').strip()
 t = t.replace('{{AUTOR_LINEA}}', f'Hecho por {html.escape(autor)}. ' if autor else '')
 
-def fill(s, metodo, repo):
+def fill(s, metodo, repo, sistema):
     s = s.replace('{{METODO_URL}}', metodo)
+    s = s.replace('{{SISTEMA_URL}}', sistema)
     s = s.replace('{{REPO_LINE}}', f' · <a href="{html.escape(repo)}">código y datos</a>' if repo else '')
     s = s.replace('{{NAV_REPO}}', f'<a href="{html.escape(repo)}">Código y datos</a>' if repo else '')
     assert '{{' not in s, 'Quedan marcadores sin rellenar'
     return s
 
 # Fragmento para vista previa
-open(f'{S}/web/vista_previa.html', 'w', encoding='utf-8').write(fill(t, cfg.get('metodo_vista_previa', 'metodo.html'), ''))
+open(f'{S}/web/vista_previa.html', 'w', encoding='utf-8').write(fill(t, cfg.get('metodo_vista_previa', 'metodo.html'), '', cfg['url_publica'].rstrip('/') + '/sistema.html'))
 
 # Página completa
-frag = fill(t, 'metodo.html', cfg['repo_url'].rstrip('/'))
+frag = fill(t, 'metodo.html', cfg['repo_url'].rstrip('/'), 'sistema.html')
 i = frag.index('<main>')
 head = frag[:i].replace('<meta name="claude:viewport-fit-sides" content="cover">\n', '')
 body = frag[i:]

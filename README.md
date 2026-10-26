@@ -17,7 +17,8 @@ No es una recomendación de voto. El método, los supuestos y los límites está
 | Ruta | Contenido |
 |---|---|
 | `index.html` | La herramienta (página única, sin servidor). Se genera; no se edita a mano. |
-| `metodo.html`, `METODO.md` | Metodología, resumen por provincia, límites y fuentes. Se generan. |
+| `metodo.html`, `METODO.md` | Metodología, resumen por provincia, sesgos, límites y fuentes. Se generan. |
+| `sistema.html` | Cómo se reparten los escaños y por qué tiene sentido el voto útil. Se genera desde `web/sistema.md`. |
 | `web/` | Plantilla de la herramienta, textos de la metodología y configuración (`config.json`). |
 | `modelo/` | Código en Python: proyección, simulaciones, impacto en 2023, clasificación y construcción de la web. |
 | `datos/` | Resultados de 2023, encuestas de octubre de 2026 y salidas de las simulaciones. |
