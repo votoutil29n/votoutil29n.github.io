@@ -9,7 +9,7 @@ md = (open(f'{S}/web/metodo_cabecera.md', encoding='utf-8').read()
       + open(f'{S}/datos/resumen.md', encoding='utf-8').read()
       + open(f'{S}/web/metodo_cuerpo.md', encoding='utf-8').read())
 open(f'{S}/METODO.md', 'w', encoding='utf-8').write(md)
-body = markdown.markdown(md, extensions=['tables', 'fenced_code'])
+body = markdown.markdown(md, extensions=['tables', 'fenced_code', 'toc'])
 body = body.replace('<table>', '<div class="tw"><table>').replace('</table>', '</table></div>')
 body = body.replace('<a href="http', '<a target="_blank" rel="noopener" href="http')
 page = f'''<!doctype html>

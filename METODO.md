@@ -91,6 +91,34 @@ En 2023 Podemos iba dentro de Sumar (en Cataluña, Sumar-En Comú Podem). El cen
 - **Calibración.** El modelo da PP 133, PSOE 105 y Vox 66 escaños. La media de las encuestas da 136, 106 y 67.
 - **Contraste.** Se ha comparado provincia por provincia con otras calculadoras de voto útil. Las diferencias vienen sobre todo de la base de cálculo (resultados de 2023 o encuestas actuales) y de los supuestos sobre Adelante Andalucía y Nueva Canarias.
 
+## Partidos incluidos y sesgos conocidos
+
+**Partidos incluidos**
+
+- **Opciones que puedes elegir:** las listas de izquierda que se presentan en tu provincia. Son el PSOE (con sus marcas PSC, PSdeG, PSE y PSN), Frente Amplio y sus marcas, Podemos, ERC, EH Bildu, BNG, Compromís-Front Valencià, Unidad del Pueblo Canario, Adelante Andalucía y Geroa Bai. En Cataluña, la Comunitat Valenciana y Canarias, Podemos no tiene lista propia: la herramienta explica a qué candidatura va ese voto.
+- **En el cálculo, pero no como opción:** PP, Vox, SALF, PNV, Junts, Coalición Canaria, UPN (en coalición con el PP en Navarra), Teruel Existe y Soria ¡Ya!
+- **Fuera del modelo:** Drago Canarias, una posible lista de IU en Teruel, Iustitia Europa, D21 y las listas pequeñas (PACMA, Escaños en Blanco, Frente Obrero y otras). Las pequeñas se agrupan como «otros» y nunca reciben escaños. CUP, UPL y Por Ávila no se presentan.
+
+**Sesgos conocidos**
+
+La herramienta favorece al bloque de izquierdas: es su objetivo. Dentro de la izquierda, todas las listas se miden con la misma regla y ninguna tiene preferencia. Pero algunos supuestos empujan hacia una u otra. La tabla muestra qué pasa con el voto que más aporta en cada provincia si se cambia cada supuesto.
+
+| Supuesto | A quién favorece | Qué cambia si se modifica |
+|---|---|---|
+| Podemos recibe un tercio del espacio de la izquierda alternativa donde va solo | Frente Amplio | Con Podemos al 45 % de ese espacio, Málaga y Bizkaia pasan al PSOE. |
+| Adelante Andalucía al 4,5 % en Andalucía, según las encuestas de generales | PSOE | Con un 7 %, Cádiz pasa a Adelante Andalucía. |
+| La mitad del voto de Nueva Canarias se va con Coalición Canaria | PSOE | Si NC conserva todo su voto, Las Palmas pasa a Unidad del Pueblo Canario. |
+| PNV, Junts y Coalición Canaria no cuentan como izquierda | Frente Amplio en Bizkaia y ERC en Tarragona | Si se cuentan como aliados, Bizkaia y Tarragona pasan a «sin disputa». |
+| Base en las encuestas actuales, no en los resultados de 2023 | Depende de la provincia | Con la base de 2023 cambian 6 provincias: Alicante, Cádiz, Gipuzkoa, Girona, Illes Balears y Pontevedra. |
+| Media de 14 encuestas, sin el CIS | PSOE | Con la reestimación del CIS cambian 4 provincias, todas del PSOE a otra lista: Álava, Cádiz, Lleida y Ourense. |
+| Nivel de ERC, semilla aleatoria y error entre bloques | Nadie | No cambia ninguna provincia. |
+
+Otros tres efectos que conviene conocer:
+
+- **El PSOE está entre los votos que más aportan en 38 de las 48 provincias con disputa.** No es una regla del modelo: con D’Hondt, en las provincias pequeñas solo los partidos grandes tienen un escaño en juego. Los niveles («Poco», «Casi nada») comparan con el mejor voto de la provincia, no en términos absolutos, y pueden leerse como un empujón hacia el partido más grande.
+- **El umbral del 3 % pesa.** En Madrid, parte de la ventaja de Podemos viene del riesgo de que no llegue al 3 %: si no llega, sus votos no cuentan. Es un efecto real del sistema electoral, pero frágil.
+- **Sin revisión experta.** La herramienta se ha hecho con ayuda de inteligencia artificial y aún no la ha revisado ningún experto en sistemas electorales. El código y los datos son públicos para que cualquiera pueda comprobarlos.
+
 ## Limitaciones y contraargumentos
 
 **Limitaciones del modelo**

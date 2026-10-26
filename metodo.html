@@ -38,11 +38,11 @@ code { font-family: var(--font-data); font-size: 0.9em; }
 <body>
 <main>
 <p class="back"><a href="./">← Volver a la herramienta</a></p>
-<h1>Metodología de Voto útil 29-N</h1>
+<h1 id="metodologia-de-voto-util-29-n">Metodología de Voto útil 29-N</h1>
 <p>Datos a 25 de octubre de 2026. Elecciones al Congreso del 29 de noviembre de 2026.</p>
 <p>La herramienta responde a una pregunta: en cada provincia, ¿cuántos escaños aporta tu voto al bloque de izquierdas, y aportaría más otra opción? También muestra qué pasó con tu voto en 2023.</p>
 <p>No es una recomendación de voto. Cada persona decide si prefiere votar a su partido o al voto que más aporta a la izquierda en su provincia. La herramienta pone las dos respuestas una al lado de la otra.</p>
-<h2>Cómo leer el resultado</h2>
+<h2 id="como-leer-el-resultado">Cómo leer el resultado</h2>
 <p>Para cada lista de izquierda de tu provincia, la herramienta compara cuánto aporta un voto con lo que aporta el mejor voto de esa provincia:</p>
 <div class="tw"><table>
 <thead>
@@ -71,7 +71,7 @@ code { font-family: var(--font-data); font-size: 0.9em; }
 </tbody>
 </table></div>
 <p>Si tu voto no está entre los que más aportan, verás dos respuestas: qué votar si priorizas a tu partido y qué votar si priorizas a la izquierda en conjunto. En las provincias donde ningún voto de izquierda cambia apenas el reparto, la herramienta lo dice y no recomienda cambiar.</p>
-<h2>Resumen por provincia</h2>
+<h2 id="resumen-por-provincia">Resumen por provincia</h2>
 <p>En 16 de las 52 circunscripciones, que reparten 185 escaños, una lista a la izquierda del PSOE aporta al bloque tanto o más que el PSOE. En 10 de ellas el resultado aguanta todos los escenarios de control. En otras 9 el PSOE es el voto que más aporta, pero otra lista aporta parte. En 23, casi todas del interior, solo el PSOE aporta escaños a la izquierda. En 4 ningún voto de izquierda cambia apenas el reparto.</p>
 <p>La tabla muestra el voto que más aporta y la mejor opción fuera del PSOE, con el porcentaje que aporta respecto al mejor voto y su rango en los escenarios de control.</p>
 <div class="tw"><table>
@@ -297,7 +297,7 @@ code { font-family: var(--font-data); font-size: 0.9em; }
 <li><strong>La división entre Frente Amplio y Podemos cuesta unos 4 escaños a la izquierda.</strong> Las mayores pérdidas están en Zaragoza, Málaga, Asturias, Murcia, Madrid, A Coruña y Sevilla.</li>
 <li><strong>El margen nacional es grande.</strong> Con la media de encuestas, PP, Vox y SALF llegan a 176 escaños en el 97 % de las simulaciones. Con un error entre bloques mayor baja al 91 %, y con la reestimación del CIS, al 59 %. Concentrar el voto solo cambia el Gobierno si las encuestas fallan por varios puntos.</li>
 </ul>
-<h2>Método</h2>
+<h2 id="metodo">Método</h2>
 <ol>
 <li><strong>Objetivo.</strong> Maximizar los escaños del bloque de izquierdas: el PSOE, Frente Amplio y sus marcas, Podemos, ERC, EH Bildu, BNG, Compromís-Front Valencià, Unidad del Pueblo Canario, Adelante Andalucía y Geroa Bai. PNV, Junts y Coalición Canaria no cuentan como izquierda.</li>
 <li><strong>Datos de partida.</strong> Resultados de 2023 en las 52 circunscripciones, con los escaños de 2026 (Madrid sube a 38, Cádiz baja a 8). Vox no se presentó en 2023 en Santa Cruz de Tenerife; allí uso su resultado de noviembre de 2019, ajustado.</li>
@@ -310,17 +310,78 @@ code { font-family: var(--font-data); font-size: 0.9em; }
 <li><strong>Comparación.</strong> Cada lista se compara con el mejor voto de su provincia. Si ninguna lista aporta más de 0,01 escaños por medio punto, la provincia se marca como sin disputa.</li>
 <li><strong>Confianza.</strong> El cálculo se repite en 10 escenarios de control: otra semilla aleatoria, ERC bajo (como en las encuestas nacionales) y alto (como en el CEO), error entre bloques mayor, Podemos con el 45 % del espacio, izquierda alternativa en 9 % y en 11 %, Adelante Andalucía al 7 %, la reestimación del CIS y NC entera en UPC. Alta: el mejor voto sigue siéndolo en todos. Media: deja de serlo en 1 a 3. Baja: en 4 o más.</li>
 </ol>
-<h2>Qué pasó en 2023</h2>
+<h2 id="que-paso-en-2023">Qué pasó en 2023</h2>
 <p>La pestaña de 2023 usa los resultados oficiales, sin modelo. Para cada provincia aplica D’Hondt a los votos reales y calcula quién ganó el último escaño, por cuántos votos, y cuántos votos le faltaron a cada lista para un escaño más. El cálculo reproduce los 350 escaños reales sin un solo error.</p>
 <p>En 2023 Podemos iba dentro de Sumar (en Cataluña, Sumar-En Comú Podem). El censo de aquellas elecciones se cerró el 1 de marzo de 2023: quien se empadronó en otro municipio después votó en el anterior.</p>
-<h2>Validación</h2>
+<h2 id="validacion">Validación</h2>
 <ul>
 <li><strong>Prueba con 2023.</strong> Con los resultados reales de 2023, el reparto D’Hondt del modelo reproduce los 350 escaños.</li>
 <li><strong>Revisión independiente.</strong> Un segundo análisis revisó el código y los supuestos. Encontró varios fallos, ya corregidos: Vox con 0 % en Santa Cruz de Tenerife, partidos pequeños agrupados que podían recibir escaños, la escisión de NC en Canarias, umbrales que no escalaban bien y un escenario de unidad que no se aplicaba en Baleares y Teruel. También pidió más simulaciones y rangos en lugar de cifras únicas.</li>
 <li><strong>Calibración.</strong> El modelo da PP 133, PSOE 105 y Vox 66 escaños. La media de las encuestas da 136, 106 y 67.</li>
 <li><strong>Contraste.</strong> Se ha comparado provincia por provincia con otras calculadoras de voto útil. Las diferencias vienen sobre todo de la base de cálculo (resultados de 2023 o encuestas actuales) y de los supuestos sobre Adelante Andalucía y Nueva Canarias.</li>
 </ul>
-<h2>Limitaciones y contraargumentos</h2>
+<h2 id="partidos-incluidos-y-sesgos-conocidos">Partidos incluidos y sesgos conocidos</h2>
+<p><strong>Partidos incluidos</strong></p>
+<ul>
+<li><strong>Opciones que puedes elegir:</strong> las listas de izquierda que se presentan en tu provincia. Son el PSOE (con sus marcas PSC, PSdeG, PSE y PSN), Frente Amplio y sus marcas, Podemos, ERC, EH Bildu, BNG, Compromís-Front Valencià, Unidad del Pueblo Canario, Adelante Andalucía y Geroa Bai. En Cataluña, la Comunitat Valenciana y Canarias, Podemos no tiene lista propia: la herramienta explica a qué candidatura va ese voto.</li>
+<li><strong>En el cálculo, pero no como opción:</strong> PP, Vox, SALF, PNV, Junts, Coalición Canaria, UPN (en coalición con el PP en Navarra), Teruel Existe y Soria ¡Ya!</li>
+<li><strong>Fuera del modelo:</strong> Drago Canarias, una posible lista de IU en Teruel, Iustitia Europa, D21 y las listas pequeñas (PACMA, Escaños en Blanco, Frente Obrero y otras). Las pequeñas se agrupan como «otros» y nunca reciben escaños. CUP, UPL y Por Ávila no se presentan.</li>
+</ul>
+<p><strong>Sesgos conocidos</strong></p>
+<p>La herramienta favorece al bloque de izquierdas: es su objetivo. Dentro de la izquierda, todas las listas se miden con la misma regla y ninguna tiene preferencia. Pero algunos supuestos empujan hacia una u otra. La tabla muestra qué pasa con el voto que más aporta en cada provincia si se cambia cada supuesto.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Supuesto</th>
+<th>A quién favorece</th>
+<th>Qué cambia si se modifica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Podemos recibe un tercio del espacio de la izquierda alternativa donde va solo</td>
+<td>Frente Amplio</td>
+<td>Con Podemos al 45 % de ese espacio, Málaga y Bizkaia pasan al PSOE.</td>
+</tr>
+<tr>
+<td>Adelante Andalucía al 4,5 % en Andalucía, según las encuestas de generales</td>
+<td>PSOE</td>
+<td>Con un 7 %, Cádiz pasa a Adelante Andalucía.</td>
+</tr>
+<tr>
+<td>La mitad del voto de Nueva Canarias se va con Coalición Canaria</td>
+<td>PSOE</td>
+<td>Si NC conserva todo su voto, Las Palmas pasa a Unidad del Pueblo Canario.</td>
+</tr>
+<tr>
+<td>PNV, Junts y Coalición Canaria no cuentan como izquierda</td>
+<td>Frente Amplio en Bizkaia y ERC en Tarragona</td>
+<td>Si se cuentan como aliados, Bizkaia y Tarragona pasan a «sin disputa».</td>
+</tr>
+<tr>
+<td>Base en las encuestas actuales, no en los resultados de 2023</td>
+<td>Depende de la provincia</td>
+<td>Con la base de 2023 cambian 6 provincias: Alicante, Cádiz, Gipuzkoa, Girona, Illes Balears y Pontevedra.</td>
+</tr>
+<tr>
+<td>Media de 14 encuestas, sin el CIS</td>
+<td>PSOE</td>
+<td>Con la reestimación del CIS cambian 4 provincias, todas del PSOE a otra lista: Álava, Cádiz, Lleida y Ourense.</td>
+</tr>
+<tr>
+<td>Nivel de ERC, semilla aleatoria y error entre bloques</td>
+<td>Nadie</td>
+<td>No cambia ninguna provincia.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Otros tres efectos que conviene conocer:</p>
+<ul>
+<li><strong>El PSOE está entre los votos que más aportan en 38 de las 48 provincias con disputa.</strong> No es una regla del modelo: con D’Hondt, en las provincias pequeñas solo los partidos grandes tienen un escaño en juego. Los niveles («Poco», «Casi nada») comparan con el mejor voto de la provincia, no en términos absolutos, y pueden leerse como un empujón hacia el partido más grande.</li>
+<li><strong>El umbral del 3 % pesa.</strong> En Madrid, parte de la ventaja de Podemos viene del riesgo de que no llegue al 3 %: si no llega, sus votos no cuentan. Es un efecto real del sistema electoral, pero frágil.</li>
+<li><strong>Sin revisión experta.</strong> La herramienta se ha hecho con ayuda de inteligencia artificial y aún no la ha revisado ningún experto en sistemas electorales. El código y los datos son públicos para que cualquiera pueda comprobarlos.</li>
+</ul>
+<h2 id="limitaciones-y-contraargumentos">Limitaciones y contraargumentos</h2>
 <p><strong>Limitaciones del modelo</strong></p>
 <ul>
 <li><strong>Las encuestas pueden fallar todas en la misma dirección.</strong> En 2023 infravaloraron al PSOE. El modelo supone un error de unos 2 puntos por partido, y eso puede quedarse corto.</li>
@@ -338,9 +399,9 @@ code { font-family: var(--font-data); font-size: 0.9em; }
 <li><strong>El cálculo cambia si mucha gente lo sigue.</strong> Si muchos votantes de una lista se pasan a otra, la lista abandonada puede perder un escaño que tenía.</li>
 <li><strong>La definición del bloque importa.</strong> Si cuentas a PNV, Junts y Coalición Canaria como aliados, cambian los resultados del País Vasco, Cataluña y Canarias.</li>
 </ul>
-<h2>Otras herramientas</h2>
+<h2 id="otras-herramientas">Otras herramientas</h2>
 <p>Existen otras calculadoras de voto útil para el 29-N, con métodos distintos: <a target="_blank" rel="noopener" href="https://votoutilizquierda.com/">votoutilizquierda.com</a>, <a target="_blank" rel="noopener" href="https://elvotoutil.org/">elvotoutil.org</a>, <a target="_blank" rel="noopener" href="https://stopderecha.es/">Stop Derecha</a> y <a target="_blank" rel="noopener" href="https://dlopez-akalam.github.io/elecciones-29n2026-estimacion/">elecciones-29n2026-estimacion</a>. Coinciden con esta en la mayoría de provincias.</p>
-<h2>Reproducir los cálculos</h2>
+<h2 id="reproducir-los-calculos">Reproducir los cálculos</h2>
 <p>Todo el código y los datos están en el <a target="_blank" rel="noopener" href="https://github.com/votoutil29n/votoutil29n.github.io">repositorio</a>. Requiere Python 3 con numpy, pandas y markdown.</p>
 <pre><code>python3 modelo/base.py .
 python3 modelo/model.py . 250000 0.05 main '{}'
@@ -350,7 +411,7 @@ python3 modelo/clasificar.py .
 python3 modelo/construir_web.py .
 python3 modelo/construir_metodo.py .
 </code></pre>
-<h2>Fuentes</h2>
+<h2 id="fuentes">Fuentes</h2>
 <p>Consultadas el 25 de octubre de 2026.</p>
 <p><strong>Resultados y escaños</strong></p>
 <ul>
