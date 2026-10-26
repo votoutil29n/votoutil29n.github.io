@@ -137,7 +137,7 @@ footer { font-size: 0.85rem; color: var(--muted); display: grid; gap: 6px; }
   <header>
     <span class="eyebrow">Elecciones generales · 29 de noviembre de 2026</span>
     <h1>¿Dónde aporta más tu voto a la izquierda?</h1>
-    <p class="lede">Elige tu provincia y a quién piensas votar. Verás cuántos escaños aporta tu voto al bloque de izquierdas y si otra opción aportaría más. La decisión es tuya.</p>
+    <p class="lede">Elige tu provincia y a quién piensas votar. Verás cuántos diputados aporta tu voto al conjunto de partidos de izquierda y si otra opción aportaría más. La decisión es tuya. <a href="{{SISTEMA_URL}}">¿Cómo se reparten los diputados?</a></p>
   </header>
 
   <p class="notice" id="notice" hidden></p>
@@ -197,7 +197,7 @@ footer { font-size: 0.85rem; color: var(--muted); display: grid; gap: 6px; }
 
   <section class="card">
     <h3>En qué se basa</h3>
-    <p>Partimos de los resultados de 2023 y de la media de 14 encuestas publicadas hasta el 17 de octubre. Repartimos los escaños de cada provincia con la ley D’Hondt en 250.000 escenarios posibles. Para cada lista, medimos cuántos escaños gana el bloque de izquierdas si recibe un poco más de voto.</p>
+    <p>Partimos de los resultados de 2023 y de la media de 14 encuestas publicadas hasta el 17 de octubre. Repartimos los escaños de cada provincia con la ley D’Hondt, el método oficial (<a href="{{SISTEMA_URL}}#como-se-reparten-los-escanos-de-una-provincia">cómo funciona</a>). Como las encuestas fallan, repetimos el cálculo en 250.000 resultados posibles. Para cada lista, medimos cuántos escaños gana la izquierda en conjunto si esa lista recibe un poco más de voto.</p>
     <p>Contamos como izquierda al PSOE y a las listas a su izquierda: Frente Amplio y sus marcas, Podemos, ERC, EH Bildu, BNG, Compromís, Unidad del Pueblo Canario, Adelante Andalucía y Geroa Bai.</p>
     <p class="small">No hay encuestas fiables por provincia, las encuestas pueden fallar y un voto individual casi nunca decide un escaño. Esto compara opciones; no adivina el resultado. <a href="{{METODO_URL}}">Metodología completa</a> · <a href="{{METODO_URL}}#partidos-incluidos-y-sesgos-conocidos">partidos incluidos y sesgos conocidos</a>{{REPO_LINE}}.</p>
   </section>
@@ -351,7 +351,7 @@ function renderRows(p, s) {
     const fill = el('div', 'fill' + (o.rel >= 0.9 && !p.nocontest ? ' max' : '') + (cur && cur.id === o.id ? ' me' : ''));
     fill.style.width = (p.nocontest ? 2 : Math.max(2, pct(o.rel))) + '%';
     track.appendChild(fill);
-    row.append(head, track, el('span', 'row-meta', `${fmt1(o.share)} % estimado · ${seatText(o)}`));
+    row.append(head, track, el('span', 'row-meta', `${fmt1(o.share)} % del voto según las encuestas · ${seatText(o)}`));
     rows.appendChild(row);
   });
   const d = $('detail'); d.innerHTML = '';
@@ -359,14 +359,14 @@ function renderRows(p, s) {
   p.options.forEach((o) => {
     const votes = o.need_pts * p.y23.valid / 100;
     const v = votes < 500 ? 'menos de 500' : 'unos ' + fmtInt(Math.round(votes / 100) * 100);
-    const seats = o.seats_now === 0 ? 'Sin escaño en el escenario central' : `${o.seats_now} ${o.seats_now === 1 ? 'escaño' : 'escaños'} en el escenario central`;
+    const seats = o.seats_now === 0 ? 'Sin escaño en el resultado más probable' : `${o.seats_now} ${o.seats_now === 1 ? 'escaño' : 'escaños'} en el resultado más probable`;
     ul.appendChild(el('li', null, `${o.name}: aporta el ${pct(o.rel)} % del mejor voto (entre el ${pct(o.lo)} % y el ${pct(o.hi)} % según los supuestos). ${seats}; le faltan ${v} votos para el siguiente.`));
   });
   d.appendChild(ul);
   const c = p.contest;
-  d.appendChild(el('p', null, `Último escaño en el escenario central: ${c[0]}. Le siguen ${c[1]} y ${c[2]}.`));
+  d.appendChild(el('p', null, `En el resultado más probable, el último escaño de la provincia (el más disputado) es ${c[0]}. Los siguientes en la cola son ${c[1]} y ${c[2]}.`));
   if (p.others.length) d.appendChild(el('p', null, 'Otras listas: ' + p.others.map((x) => `${x.name} ${fmt1(x.share)} %`).join(', ') + '.'));
-  d.appendChild(el('p', 'small', `Confianza ${p.conf}: indica si el voto que más aporta sigue siéndolo en 10 escenarios alternativos (otras encuestas, más o menos voto para ERC, Podemos o Adelante Andalucía…). Los votos que faltan suponen la participación de 2023.`));
+  d.appendChild(el('p', 'small', `Confianza ${p.conf}: indica si el voto que más aporta sigue siéndolo cuando cambiamos los supuestos del cálculo (otras encuestas, más o menos voto para ERC, Podemos o Adelante Andalucía…). «Resultado más probable» es el reparto con la media de las encuestas. Los votos que faltan suponen que vota la misma gente que en 2023.`));
 }
 
 const PAST_MAP = { PSOE: 'PSOE', FA: 'SUMAR', POD: 'SUMAR', POD_IN: 'SUMAR', ALT: 'SUMAR', ERC: 'ERC', BILDU: 'BILDU', BNG: 'BNG', AA: 'SUMAR', GBAI: 'GBAI' };

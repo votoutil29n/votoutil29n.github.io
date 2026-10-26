@@ -47,104 +47,139 @@ code { font-family: var(--font-data); font-size: 0.9em; }
 <main>
 <nav class="topbar" aria-label="Secciones"><a class="brand" href="./">Voto útil 29-N</a><span class="links"><a href="./">← Herramienta</a><a href="sistema.html" aria-current="page">Sistema electoral</a><a href="metodo.html">Metodología</a><a target="_blank" rel="noopener" href="https://github.com/votoutil29n/votoutil29n.github.io">Código y datos</a></span></nav>
 <h1 id="como-se-reparten-los-escanos">Cómo se reparten los escaños</h1>
-<p>En las elecciones generales no se suman los votos de toda España. Cada provincia elige a sus diputados por separado, y en la mayoría se eligen muy pocos. Por eso el mismo voto puede decidir un escaño en una provincia y no elegir a nadie en otra.</p>
-<nav class="toc" aria-label="En esta página"><p class="toc-t">En esta página</p><ol><li><a href="#cada-provincia-vota-por-separado">Cada provincia vota por separado</a></li><li><a href="#la-ley-dhondt-paso-a-paso">La ley D’Hondt, paso a paso</a></li><li><a href="#por-que-hay-votos-que-no-eligen-a-nadie">Por qué hay votos que no eligen a nadie</a></li><li><a href="#por-que-tiene-sentido-pensar-en-el-voto-util">Por qué tiene sentido pensar en el voto útil</a></li><li><a href="#cuando-importa-menos">Cuándo importa menos</a></li><li><a href="#preguntas-frecuentes">Preguntas frecuentes</a></li></ol></nav>
-<h2 id="cada-provincia-vota-por-separado">Cada provincia vota por separado</h2>
+<p>En las elecciones generales no gana escaños quien más votos saca en toda España. Cada provincia elige a sus propios diputados, y en la mayoría se eligen muy pocos. Por eso el mismo voto puede decidir quién gana un diputado en una provincia y no servir para elegir a nadie en otra.</p>
+<nav class="toc" aria-label="En esta página"><p class="toc-t">En esta página</p><ol><li><a href="#palabras-que-conviene-conocer">Palabras que conviene conocer</a></li><li><a href="#cada-provincia-elige-a-sus-diputados-por-separado">Cada provincia elige a sus diputados por separado</a></li><li><a href="#como-se-reparten-los-escanos-de-una-provincia">Cómo se reparten los escaños de una provincia</a></li><li><a href="#por-que-hay-votos-que-no-eligen-a-nadie">Por qué hay votos que no eligen a nadie</a></li><li><a href="#por-que-tiene-sentido-pensar-en-el-voto-util">Por qué tiene sentido pensar en el voto útil</a></li><li><a href="#cuando-importa-menos">Cuándo importa menos</a></li><li><a href="#preguntas-frecuentes">Preguntas frecuentes</a></li></ol></nav>
+<h2 id="palabras-que-conviene-conocer">Palabras que conviene conocer</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Palabra</th>
+<th>Qué significa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Escaño</td>
+<td>Cada uno de los 350 puestos de diputado en el Congreso. Ganar un escaño es conseguir un diputado.</td>
+</tr>
+<tr>
+<td>Circunscripción</td>
+<td>El territorio que elige a sus propios diputados. En las generales, cada provincia es una circunscripción; Ceuta y Melilla también.</td>
+</tr>
+<tr>
+<td>Lista o candidatura</td>
+<td>El partido o la coalición de partidos que se presenta en una provincia. Votas a una lista, no a una persona.</td>
+</tr>
+<tr>
+<td>Votos válidos</td>
+<td>Los votos a una lista más los votos en blanco. No incluyen los votos nulos ni a quien no vota.</td>
+</tr>
+<tr>
+<td>Barrera del 3 %</td>
+<td>Una lista necesita al menos el 3 % de los votos válidos de su provincia para poder ganar escaños.</td>
+</tr>
+<tr>
+<td>Bloque</td>
+<td>Un grupo de partidos con ideas parecidas que suelen apoyarse entre sí; por ejemplo, los partidos de izquierda.</td>
+</tr>
+<tr>
+<td>Voto útil</td>
+<td>Votar a la opción de tu bloque con más posibilidades de ganar un escaño en tu provincia, aunque no sea tu primera preferencia.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="cada-provincia-elige-a-sus-diputados-por-separado">Cada provincia elige a sus diputados por separado</h2>
 <ul>
-<li>El Congreso tiene 350 escaños, repartidos en 52 circunscripciones: las 50 provincias, Ceuta y Melilla.</li>
-<li>Cada provincia tiene al menos 2 escaños; Ceuta y Melilla, 1. Los 248 restantes se reparten según la población.</li>
-<li>El 29 de noviembre, Madrid elige 38 diputados y Soria, 2. De las 52 circunscripciones, 29 eligen 5 diputados o menos.</li>
-<li>Tu voto solo cuenta para los escaños de tu provincia. Los votos que sobran en una provincia no pasan a otra.</li>
+<li>El Congreso tiene 350 escaños, repartidos entre 52 circunscripciones: las 50 provincias, Ceuta y Melilla.</li>
+<li>Cada provincia tiene al menos 2 escaños; Ceuta y Melilla, 1 cada una. Los 248 restantes se reparten según la población de cada provincia.</li>
+<li>El 29 de noviembre, Madrid elegirá 38 diputados y Soria, 2. De las 52 circunscripciones, 29 eligen 5 diputados o menos.</li>
+<li>Tu voto solo cuenta para repartir los escaños de tu provincia. Los votos que sobran en una provincia no pasan a otra ni se suman a nivel nacional.</li>
 </ul>
-<h2 id="la-ley-dhondt-paso-a-paso">La ley D’Hondt, paso a paso</h2>
-<p>Dentro de cada provincia, los escaños se reparten así:</p>
+<h2 id="como-se-reparten-los-escanos-de-una-provincia">Cómo se reparten los escaños de una provincia</h2>
+<p>Se usa un método llamado <strong>ley D’Hondt</strong>. La idea es sencilla:</p>
 <ol>
-<li>Se descartan las listas con menos del 3 % de los votos válidos. Los votos en blanco cuentan como válidos.</li>
-<li>Los votos de cada lista se dividen entre 1, 2, 3… hasta el número de escaños.</li>
-<li>Los escaños van, uno a uno, a los resultados más altos.</li>
+<li><strong>Primero se quitan las listas que no llegan al 3 %</strong> de los votos válidos de la provincia.</li>
+<li><strong>Los escaños se reparten de uno en uno.</strong> Cada escaño se lo lleva la lista que en ese momento tiene la cifra más alta.</li>
+<li><strong>Cuando una lista gana un escaño, su cifra baja.</strong> Para el siguiente reparto, sus votos se dividen entre 2. Si gana otro, se dividen entre 3, y así sucesivamente. Así se evita que la lista más votada se lo lleve todo.</li>
 </ol>
-<p>Ejemplo real: Lleida en 2023, con 4 escaños y 184.539 votos válidos. Las cifras en negrita son las que obtuvieron escaño.</p>
+<h3 id="un-ejemplo-real-lleida-en-2023">Un ejemplo real: Lleida en 2023</h3>
+<p>Lleida elige 4 diputados. En 2023 hubo 184.539 votos válidos, y estas listas recibieron más votos:</p>
 <div class="tw"><table>
 <thead>
 <tr>
 <th>Lista</th>
 <th>Votos</th>
-<th>Entre 1</th>
-<th>Entre 2</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>PSC</td>
 <td>54.414</td>
-<td><strong>54.414</strong> (1.º)</td>
-<td><strong>27.207</strong> (4.º)</td>
 </tr>
 <tr>
 <td>ERC</td>
 <td>34.331</td>
-<td><strong>34.331</strong> (2.º)</td>
-<td>17.166</td>
 </tr>
 <tr>
 <td>Junts</td>
 <td>33.228</td>
-<td><strong>33.228</strong> (3.º)</td>
-<td>16.614</td>
 </tr>
 <tr>
 <td>PP</td>
 <td>23.699</td>
-<td>23.699</td>
-<td>11.850</td>
 </tr>
 <tr>
 <td>Sumar-En Comú Podem</td>
 <td>14.561</td>
-<td>14.561</td>
-<td>7.281</td>
 </tr>
 <tr>
 <td>Vox</td>
 <td>12.560</td>
-<td>12.560</td>
-<td>6.280</td>
 </tr>
 <tr>
 <td>CUP</td>
 <td>5.449</td>
-<td>No llega al 3 %</td>
-<td>—</td>
 </tr>
 </tbody>
 </table></div>
-<p>El cuarto escaño fue para el PSC, por 3.509 votos sobre el PP. Los votos de Sumar-En Comú Podem, Vox y la CUP no eligieron a nadie en Lleida. A la CUP le faltaron 88 votos para llegar al 3 %.</p>
-<h2 id="por-que-hay-votos-que-no-eligen-a-nadie">Por qué hay votos que no eligen a nadie</h2>
+<p><strong>Antes de empezar.</strong> Para llegar al 3 % de 184.539 votos hacen falta 5.537. La CUP tiene 5.449: se queda fuera por 88 votos.</p>
+<p><strong>Primer escaño.</strong> La cifra más alta es la del PSC: 54.414. El PSC gana un diputado. Desde ahora, para los siguientes escaños, sus votos cuentan divididos entre 2: 27.207.</p>
+<p><strong>Segundo escaño.</strong> Ahora la cifra más alta es la de ERC: 34.331, por encima de Junts (33.228) y del PSC (27.207). ERC gana un diputado y pasa a competir con la mitad: 17.166.</p>
+<p><strong>Tercer escaño.</strong> La más alta es la de Junts: 33.228. Junts gana un diputado y pasa a competir con 16.614.</p>
+<p><strong>Cuarto escaño.</strong> Quedan el PSC con 27.207, el PP con 23.699, ERC con 17.166 y Junts con 16.614. El PSC tiene la cifra más alta y gana su segundo diputado.</p>
+<p><strong>Resultado:</strong> PSC 2 diputados, ERC 1 y Junts 1.</p>
 <ul>
-<li><strong>Con pocos escaños, hace falta mucho voto para entrar.</strong> En una provincia de 4 escaños suele hacer falta en torno al 15–20 %. En Lleida, el PP se quedó fuera con el 12,8 %.</li>
-<li><strong>En 2023 fueron muchos votos.</strong> Al menos 870.000 votos a listas de izquierda no eligieron a nadie en su provincia. De ellos, 605.000 eran de Sumar, que entonces incluía a Podemos, en 33 provincias. Pasa en todos los bloques: 580.000 votos de PP y Vox tampoco eligieron a nadie, y Vox se quedó sin escaño en 27 provincias.</li>
-<li><strong>No todos los votos pesan igual.</strong> En Teruel o Soria, un escaño costó unos 25.000 votos en 2023; en Madrid, unos 97.500.</li>
+<li>El PP se quedó a 3.509 votos del cuarto escaño: si hubiera tenido 27.208 votos, habría superado al PSC.</li>
+<li>Los votos al PP, a Sumar-En Comú Podem, a Vox y a la CUP no sirvieron para elegir a ningún diputado en Lleida.</li>
+</ul>
+<h2 id="por-que-hay-votos-que-no-eligen-a-nadie">Por qué hay votos que no eligen a nadie</h2>
+<p>Un voto «no elige a nadie» cuando va a una lista que no consigue ningún escaño en esa provincia.</p>
+<ul>
+<li><strong>Con pocos escaños, hace falta mucho voto para entrar.</strong> En una provincia que elige 4 diputados suele hacer falta entre un 15 % y un 20 % de los votos. En Lleida, el PP se quedó fuera con el 12,8 %.</li>
+<li><strong>En 2023 pasó con muchos votos.</strong> Al menos 870.000 votos a listas de izquierda fueron a listas que no ganaron ningún escaño en su provincia. De ellos, 605.000 eran de Sumar, que entonces incluía a Podemos, en 33 provincias. Pasa en todos los bloques: 580.000 votos al PP y a Vox tampoco eligieron a nadie, y Vox se quedó sin escaño en 27 provincias.</li>
+<li><strong>No todos los votos pesan igual.</strong> Si se dividen los votos válidos de cada provincia entre sus escaños, en Teruel o Soria cada escaño correspondió a unos 25.000 votos en 2023; en Madrid, a unos 97.500.</li>
 </ul>
 <h2 id="por-que-tiene-sentido-pensar-en-el-voto-util">Por qué tiene sentido pensar en el voto útil</h2>
 <ul>
-<li><strong>El último escaño se decide por pocos votos.</strong> En 2023 se decidió por menos de 5.000 votos en 16 provincias, y por menos de 10.000 en 29. En Girona fueron 285 votos; en Cantabria, 404; en Madrid, 1.340.</li>
-<li><strong>Dividir el voto cuesta escaños.</strong> Si dos listas cercanas se reparten los votos, pueden quedarse las dos sin el escaño que tendrían juntas. El modelo de esta herramienta estima que la división entre Frente Amplio y Podemos cuesta unos 4 escaños a la izquierda en 2026.</li>
-<li><strong>El voto que más aporta depende de la provincia.</strong> No es siempre el del partido más grande ni siempre el del pequeño. Es el de la lista de tu bloque que pelea el último escaño.</li>
+<li><strong>El último escaño se decide por pocos votos.</strong> El último escaño de cada provincia es el más disputado. En 2023 se decidió por menos de 5.000 votos en 16 provincias, y por menos de 10.000 en 29. En Girona fueron 285 votos; en Cantabria, 404; en Madrid, 1.340.</li>
+<li><strong>Dividir el voto cuesta escaños.</strong> Un ejemplo inventado, en una provincia que elige 4 diputados: el partido A saca el 30 %, el B el 20 %, el C el 14 %, y dos partidos afines, D y E, el 12 % cada uno. Los escaños van a A, B, A y C: D y E se quedan sin nada. Si D y E se hubieran presentado juntos, con el 24 %, habrían ganado un escaño en lugar de C.</li>
+<li><strong>Pasa en estas elecciones.</strong> El modelo de esta herramienta estima que presentarse por separado le cuesta a Frente Amplio y Podemos unos 4 escaños en toda España.</li>
+<li><strong>El voto que más aporta depende de la provincia.</strong> No es siempre el del partido más grande ni siempre el del pequeño. Es el de la lista de tu bloque que está peleando el último escaño de tu provincia.</li>
 </ul>
 <h2 id="cuando-importa-menos">Cuándo importa menos</h2>
 <ul>
-<li><strong>En las provincias grandes el reparto es casi proporcional.</strong> En Madrid y Barcelona basta con superar el 3 % para sacar un escaño; en Valencia hace falta en torno al 6 %.</li>
-<li><strong>Donde ninguna lista de tu bloque tiene un escaño en juego,</strong> el voto táctico apenas cambia el resultado.</li>
-<li><strong>El voto sincero también tiene valor.</strong> Mide los apoyos reales de cada partido y condiciona sus decisiones a medio plazo.</li>
+<li><strong>En las provincias que eligen muchos diputados, el reparto es casi proporcional.</strong> En Madrid y Barcelona, una lista que supera el 3 % suele ganar al menos un escaño. En Valencia hace falta en torno al 6 %.</li>
+<li><strong>Si ninguna lista de tu bloque está peleando un escaño en tu provincia,</strong> cambiar el voto apenas cambia el resultado.</li>
+<li><strong>Votar a tu partido preferido también tiene valor.</strong> Muestra el apoyo real que tiene cada partido y condiciona sus decisiones a medio plazo.</li>
 </ul>
 <h2 id="preguntas-frecuentes">Preguntas frecuentes</h2>
 <ul>
-<li><strong>¿Cuenta el voto en blanco?</strong> Cuenta como voto válido y sube un poco la barrera del 3 %, pero no elige a nadie.</li>
-<li><strong>¿Y el voto nulo o la abstención?</strong> No cuentan para el reparto.</li>
+<li><strong>¿Cuenta el voto en blanco?</strong> Cuenta como voto válido, así que sube un poco la cifra necesaria para llegar al 3 %. Pero no elige a ningún diputado.</li>
+<li><strong>¿Y el voto nulo o no ir a votar?</strong> No cuentan para el reparto de escaños.</li>
 <li><strong>¿Se suman mis votos en toda España?</strong> No para los escaños: cada provincia reparte los suyos por separado.</li>
 <li><strong>¿Y el Senado?</strong> Funciona con otro sistema: se vota a personas, no a listas. Esta herramienta solo trata el Congreso.</li>
 </ul>
-<p>Datos de 2023: resultados oficiales del Ministerio del Interior, recogidos en <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Results_of_the_2023_Spanish_Congress_election">Wikipedia</a>. Reparto de escaños: Ley Orgánica del Régimen Electoral General, artículos 162 y 163.</p>
+<p>Datos de 2023: resultados oficiales del Ministerio del Interior, recogidos en <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Results_of_the_2023_Spanish_Congress_election">Wikipedia</a>. Reglas del reparto: Ley Orgánica del Régimen Electoral General, artículos 162 y 163.</p>
 <p class="back"><a href="./">← Volver a la herramienta</a></p>
 </main>
 </body>
