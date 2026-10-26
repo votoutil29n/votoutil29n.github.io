@@ -2,7 +2,8 @@
 
 Uso: python3 modelo/construir_metodo.py <raíz del repositorio>
 """
-import sys, markdown
+import sys, re, json, html, markdown
+from markdown.extensions.toc import slugify
 S = sys.argv[1] if len(sys.argv) > 1 else '.'
 # METODO.md = cabecera + tabla generada por clasificar.py + cuerpo
 md = (open(f'{S}/web/metodo_cabecera.md', encoding='utf-8').read()
@@ -10,6 +11,13 @@ md = (open(f'{S}/web/metodo_cabecera.md', encoding='utf-8').read()
       + open(f'{S}/web/metodo_cuerpo.md', encoding='utf-8').read())
 open(f'{S}/METODO.md', 'w', encoding='utf-8').write(md)
 body = markdown.markdown(md, extensions=['tables', 'fenced_code', 'toc'])
+# Índice con las secciones de segundo nivel, antes de la primera
+secs = re.findall(r'^## (.+)$', md, flags=re.M)
+toc = '<nav class="toc" aria-label="En esta página"><p class="toc-t">En esta página</p><ol>' + ''.join(
+    f'<li><a href="#{slugify(s, "-")}">{html.escape(s)}</a></li>' for s in secs) + '</ol></nav>'
+i = body.index('<h2')
+body = body[:i] + toc + '\n' + body[i:]
+repo = json.load(open(f'{S}/web/config.json', encoding='utf-8'))['repo_url'].rstrip('/')
 body = body.replace('<table>', '<div class="tw"><table>').replace('</table>', '</table></div>')
 body = body.replace('<a href="http', '<a target="_blank" rel="noopener" href="http')
 page = f'''<!doctype html>
@@ -47,11 +55,19 @@ tr:last-child td {{ border-bottom: 0; }}
 pre {{ background: var(--sheet); border: 1px solid var(--rule); border-radius: 6px; padding: 12px; overflow-x: auto; font-family: var(--font-data); font-size: 0.85rem; }}
 code {{ font-family: var(--font-data); font-size: 0.9em; }}
 .back {{ font-family: var(--font-data); font-size: 0.85rem; }}
+.topbar {{ display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 6px 16px; padding-bottom: 10px; border-bottom: 1px solid var(--rule); }}
+.topbar .brand {{ font-family: var(--font-data); font-size: 0.8rem; letter-spacing: 0.04em; color: var(--muted); text-decoration: none; }}
+.topbar .links {{ display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 0.92rem; font-weight: 600; }}
+.topbar a {{ text-decoration: none; }}
+.toc {{ margin: 1.2em 0 0.4em; padding: 12px 16px; border: 1px solid var(--rule); border-radius: 6px; background: var(--sheet); }}
+.toc-t {{ margin: 0 0 6px; font-family: var(--font-data); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }}
+.toc ol {{ margin: 0; padding-left: 1.3em; display: grid; gap: 4px; }}
+h2 {{ scroll-margin-top: 12px; }}
 </style>
 </head>
 <body>
 <main>
-<p class="back"><a href="./">← Volver a la herramienta</a></p>
+<nav class="topbar" aria-label="Secciones"><a class="brand" href="./">Voto útil 29-N</a><span class="links"><a href="./">← Volver a la herramienta</a><a href="#partidos-incluidos-y-sesgos-conocidos">Sesgos conocidos</a><a target="_blank" rel="noopener" href="{html.escape(repo)}">Código y datos</a></span></nav>
 {body}
 <p class="back"><a href="./">← Volver a la herramienta</a></p>
 </main>

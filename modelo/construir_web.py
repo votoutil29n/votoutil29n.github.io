@@ -21,6 +21,7 @@ t = t.replace('{{AUTOR_LINEA}}', f'Hecho por {html.escape(autor)}. ' if autor el
 def fill(s, metodo, repo):
     s = s.replace('{{METODO_URL}}', metodo)
     s = s.replace('{{REPO_LINE}}', f' · <a href="{html.escape(repo)}">código y datos</a>' if repo else '')
+    s = s.replace('{{NAV_REPO}}', f'<a href="{html.escape(repo)}">Código y datos</a>' if repo else '')
     assert '{{' not in s, 'Quedan marcadores sin rellenar'
     return s
 

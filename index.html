@@ -116,6 +116,11 @@ summary { cursor: pointer; font-weight: 600; }
 .legend { display: flex; gap: 14px; font-size: 0.85rem; color: var(--muted); align-items: center; flex-wrap: wrap; }
 .legend span { display: inline-flex; align-items: center; gap: 6px; }
 
+.topbar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 6px 16px; padding-bottom: 10px; border-bottom: 1px solid var(--rule); }
+.topbar .brand { font-family: var(--font-data); font-size: 0.8rem; letter-spacing: 0.04em; color: var(--muted); }
+.topbar .links { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 0.92rem; font-weight: 600; }
+.topbar a { text-decoration: none; }
+.topbar a:hover, .topbar a:focus-visible { text-decoration: underline; }
 .share { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
 .share button { font: inherit; font-weight: 600; color: var(--accent); background: transparent; border: 1px solid var(--accent); border-radius: 4px; padding: 8px 14px; cursor: pointer; }
 .notice { padding: 14px 16px; border: 2px solid var(--warn); border-radius: 6px; background: var(--sheet); font-weight: 600; }
@@ -132,6 +137,15 @@ footer { font-size: 0.85rem; color: var(--muted); display: grid; gap: 6px; }
 </head>
 <body>
 <main>
+  <nav class="topbar" aria-label="Secciones">
+    <span class="brand">Voto útil 29-N</span>
+    <span class="links">
+      <a href="metodo.html">Cómo funciona</a>
+      <a href="metodo.html#partidos-incluidos-y-sesgos-conocidos">Sesgos conocidos</a>
+      <a href="https://github.com/votoutil29n/votoutil29n.github.io">Código y datos</a>
+    </span>
+  </nav>
+
   <header>
     <span class="eyebrow">Elecciones generales · 29 de noviembre de 2026</span>
     <h1>¿Dónde aporta más tu voto a la izquierda?</h1>
